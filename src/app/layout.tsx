@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { Archivo, Roboto } from "next/font/google"
 
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster"
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -30,9 +31,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={cn(archivo.variable, roboto.variable)} lang="en">
-      <body className="min-h-screen bg-white font-sans text-slate-900 antialiased ">
+    <html
+      className={cn(archivo.variable, roboto.variable)}
+      suppressHydrationWarning
+      lang="en"
+    >
+      <body className="min-h-screen  bg-white font-sans text-gray-900 antialiased ">
         {children}
+        <Toaster />
       </body>
     </html>
   )

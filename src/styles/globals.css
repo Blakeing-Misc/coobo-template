@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 0;
+    scroll-behavior: smooth;
+  }
+
+  /* Note: To enable anchor tag consitency, calculate the scroll-mt tw class by adding the --header-height to the set top margin of the relative element */
+
+  /* h1 {
+    @apply scroll-mt-[--header-height] text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+  h2 {
+    @apply mt-10 scroll-mt-[calc(2.5rem_+_var(--header-height))] border-b border-b-gray-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  }
+  h3 {
+    @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-2xl font-semibold tracking-tight;
+  }
+  h4 {
+    @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-xl font-semibold tracking-tight;
+  }
+  h5 {
+    @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-lg font-semibold tracking-tight;
+  }
+  h6 {
+    @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-base font-semibold tracking-tight;
+  }
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-4;
+  }
+  blockquote {
+    @apply mt-6 border-l-2 border-gray-300 pl-6 italic text-gray-800;
+  }
+  ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+  small {
+    @apply text-sm font-medium leading-none;
+  } */
+  /* Note: To enable anchor tag consitency, calculate the scroll-mt tw class by adding the --header-height to the set top margin of the relative element */
+  .coobo {
+    h1 {
+      @apply scroll-mt-[--header-height] text-4xl font-extrabold tracking-tight lg:text-5xl;
+    }
+    h2 {
+      @apply mt-10 scroll-mt-[calc(2.5rem_+_var(--header-height))] border-b border-b-gray-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    }
+    h3 {
+      @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-2xl font-semibold tracking-tight;
+    }
+    h4 {
+      @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-xl font-semibold tracking-tight;
+    }
+    h5 {
+      @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-lg font-semibold tracking-tight;
+    }
+    h6 {
+      @apply mt-8 scroll-mt-[calc(2rem_+_var(--header-height))] text-base font-semibold tracking-tight;
+    }
+    p {
+      @apply leading-7 [&:not(:first-child)]:mt-4;
+    }
+    blockquote {
+      @apply mt-6 border-l-2 border-gray-300 pl-6 italic text-gray-800;
+    }
+    ul {
+      @apply my-6 ml-6 list-disc [&>li]:mt-2;
+    }
+    small {
+      @apply text-sm font-medium leading-none;
+    }
+  }
+}

@@ -1,16 +1,82 @@
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { Text } from "@/components/ui/text"
+
 function TypographyPage() {
   return (
-    <section className="container mx-auto grid items-center gap-6 pt-6 pb-8 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
+    <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
+      <section className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Typography
         </h1>
-        <p className="max-w-[700px] text-lg text-slate-700 sm:text-xl">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+        <p className="max-w-[700px] text-lg text-gray-700 sm:text-xl">
+          Styles for headings, paragraphs, lists...etc
         </p>
-      </div>
-    </section>
+
+        <a
+          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
+          href="#section1"
+        >
+          Anchor Tag Demo
+        </a>
+      </section>
+      <Separator className="my-4 " />
+
+      <section className="coobo mx-auto max-w-prose scroll-mt-[calc(2.5rem_+_var(--header-height))] ">
+        <h1>Heading 1</h1>
+        <p>
+          Once upon a time, in a far-off land, there was a very lazy king who
+          spent all day lounging on his throne. One day, his advisors came to
+          him with a problem: the kingdom was running out of money.
+        </p>
+        <h2>Heading 2</h2>
+        <p>
+          The king thought long and hard, and finally came up with{" "}
+          <a href="#"> a brilliant plan </a> : he would tax the jokes in the
+          kingdom.
+        </p>
+        <blockquote>
+          "After all," he said, "everyone enjoys a good joke, so it's only fair
+          that they should pay for the privilege."
+        </blockquote>
+        <h3 id="section1">Heading 3</h3>
+        <p>
+          The king's subjects were not amused. They grumbled and complained, but
+          the king was firm:
+        </p>
+        <ul>
+          <li>1st level of puns: 5 gold coins</li>
+          <li>2nd level of jokes: 10 gold coins</li>
+          <li>3rd level of one-liners : 20 gold coins</li>
+        </ul>
+        <small>Small</small>
+        <p>
+          As a result, people stopped telling jokes, and the kingdom fell into a
+          gloom. But there was one person who refused to let the king's
+          foolishness get him down: a court jester named Jokester.
+        </p>
+
+        <h4>Heading 4</h4>
+        <p>
+          The people of the kingdom, feeling uplifted by the laughter, started
+          to tell jokes and puns again, and soon the entire kingdom was in on
+          the joke.
+        </p>
+        <h5>Heading 5</h5>
+        <p>
+          The king, seeing how much happier his subjects were, realized the
+          error of his ways and repealed the joke tax. Jokester was declared a
+          hero, and the kingdom lived happily ever after.
+        </p>
+        <h6>Heading 6</h6>
+        <p>
+          Jokester began sneaking into the castle in the middle of the night and
+          leaving jokes all over the place: under the king's pillow, in his
+          soup, even in the royal toilet. The king was furious, but he couldn't
+          seem to stop Jokester.
+        </p>
+      </section>
+    </div>
   )
 }
 
