@@ -31,8 +31,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={cn(archivo.variable, roboto.variable)} lang="en">
-      <body className="min-h-screen  bg-white font-sans text-gray-900 antialiased ">
+    <html
+      className={cn(
+        archivo.variable,
+        roboto.variable,
+        "scroll-smooth font-sans antialiased"
+      )}
+      lang="en"
+    >
+      <body className="min-h-screen   bg-white  text-gray-900  ">
         {children}
         <Toaster />
       </body>
