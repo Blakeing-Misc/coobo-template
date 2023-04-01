@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2, Mail } from "lucide-react"
 
@@ -12,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Separator } from "@/components/ui/separator"
 
 function ComponentsPage() {
   const { toast } = useToast()
@@ -21,19 +23,21 @@ function ComponentsPage() {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Components
         </h1>
-        <p className="max-w-[700px] text-lg text-gray-700 sm:text-xl">
+        <p className=" text-lg text-gray-700 sm:text-xl">
           Accessible and customizable components that you can copy and paste
           into your site.
         </p>
       </section>
 
-      <section className="mt-10">
-        <div className="coobo">
+      <Separator className="my-4 " />
+
+      <section className="">
+        <div className="body">
           <h2>Buttons</h2>
         </div>
         <div className="mt-10 flex flex-col gap-4 lg:flex-row">
           <Button className="max-w-fit">
-            <Mail className="mr-2 h-4 w-4" /> Login with Email
+            <Mail className="mr-2 h-4 w-4" /> Button with Icon
           </Button>
           <Button className="max-w-fit" variant="link">
             Link
@@ -59,7 +63,7 @@ function ComponentsPage() {
       </section>
 
       <section className=" mt-10">
-        <div className="coobo">
+        <div className="body">
           <h2>Accordion</h2>
         </div>
         <Accordion type="single" collapsible className="mt-10 w-[450px]">
@@ -86,7 +90,7 @@ function ComponentsPage() {
         </Accordion>
       </section>
       <section className="mt-10">
-        <div className="coobo">
+        <div className="body">
           <h2>Form Elements</h2>
         </div>
         <div className="mt-10 grid w-full max-w-sm items-center gap-1.5">
@@ -96,7 +100,7 @@ function ComponentsPage() {
         </div>
       </section>
       <section className="mt-10">
-        <div className="coobo">
+        <div className="body">
           <h2>Toast</h2>
         </div>
         <Button

@@ -38,7 +38,7 @@ const MenubarTrigger = React.forwardRef<
   <MenubarPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-[0.2rem] py-1.5 px-3 text-sm font-medium outline-none focus:bg-gray-100 data-[state=open]:bg-gray-100 dark:focus:bg-gray-700 dark:data-[state=open]:bg-gray-700",
+      "flex cursor-default select-none items-center rounded-[0.2rem] px-3 py-1.5 text-sm font-medium outline-none focus:bg-gray-100 data-[state=open]:bg-gray-100 dark:focus:bg-gray-700 dark:data-[state=open]:bg-gray-700",
       className
     )}
     {...props}
@@ -55,7 +55,7 @@ const MenubarSubTrigger = React.forwardRef<
   <MenubarPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-gray-100 data-[state=open]:bg-gray-100 dark:focus:bg-gray-700 dark:data-[state=open]:bg-gray-700",
+      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-gray-100 data-[state=open]:bg-gray-100 dark:focus:bg-gray-700 dark:data-[state=open]:bg-gray-700",
       inset && "pl-8",
       className
     )}
@@ -74,7 +74,7 @@ const MenubarSubContent = React.forwardRef<
   <MenubarPrimitive.SubContent
     ref={ref}
     className={cn(
-      "animate-in slide-in-from-left-1 z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 shadow-md dark:border-gray-700 dark:bg-gray-800",
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 shadow-md animate-in slide-in-from-left-1 dark:border-gray-700 dark:bg-gray-800",
       className
     )}
     {...props}
@@ -97,7 +97,7 @@ const MenubarContent = React.forwardRef<
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          "animate-in slide-in-from-top-1 z-50 min-w-[12rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 text-gray-700 shadow-md dark:border-gray-800 dark:bg-gray-800 dark:text-gray-400",
+          "z-50 min-w-[12rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 text-gray-700 shadow-md animate-in slide-in-from-top-1 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-400",
           className
         )}
         {...props}
@@ -116,7 +116,7 @@ const MenubarItem = React.forwardRef<
   <MenubarPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-gray-700",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-gray-700",
       inset && "pl-8",
       className
     )}

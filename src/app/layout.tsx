@@ -31,11 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      className={cn(archivo.variable, roboto.variable)}
-      suppressHydrationWarning
-      lang="en"
-    >
+    <html className={cn(archivo.variable, roboto.variable)} lang="en">
       <body className="min-h-screen  bg-white font-sans text-gray-900 antialiased ">
         {children}
         <Toaster />

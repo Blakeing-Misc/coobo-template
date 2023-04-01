@@ -1,3 +1,6 @@
+import Link from "next/link"
+
+import ScrollButton from "@/components/scroll-button"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
@@ -9,20 +12,27 @@ function TypographyPage() {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Typography
         </h1>
-        <p className="max-w-[700px] text-lg text-gray-700 sm:text-xl">
+        <p className="text-lg text-gray-700 sm:text-xl">
           Styles for headings, paragraphs, lists...etc
         </p>
-
-        <a
-          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
-          href="#section1"
-        >
-          Anchor Tag Demo
-        </a>
+        <div className="flex gap-4 ">
+          <a
+            className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
+            href="#section1"
+          >
+            Anchor Tag to H3
+          </a>
+          <a
+            className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
+            href="#section2"
+          >
+            Anchor Tag to H6
+          </a>
+        </div>
       </section>
       <Separator className="my-4 " />
 
-      <section className="coobo mx-auto max-w-prose scroll-mt-[calc(2.5rem_+_var(--header-height))] ">
+      <section className="body min-h-[300vh] max-w-prose">
         <h1>Heading 1</h1>
         <p>
           Once upon a time, in a far-off land, there was a very lazy king who
@@ -36,13 +46,13 @@ function TypographyPage() {
           kingdom.
         </p>
         <blockquote>
-          "After all," he said, "everyone enjoys a good joke, so it's only fair
-          that they should pay for the privilege."
+          &quot;After all,&quot; he said, &quot;everyone enjoys a good joke, so
+          it&apos;s only fair that they should pay for the privilege.&quot;
         </blockquote>
         <h3 id="section1">Heading 3</h3>
         <p>
-          The king's subjects were not amused. They grumbled and complained, but
-          the king was firm:
+          The king&apos;s subjects were not amused. They grumbled and
+          complained, but the king was firm:
         </p>
         <ul>
           <li>1st level of puns: 5 gold coins</li>
@@ -52,10 +62,9 @@ function TypographyPage() {
         <small>Small</small>
         <p>
           As a result, people stopped telling jokes, and the kingdom fell into a
-          gloom. But there was one person who refused to let the king's
+          gloom. But there was one person who refused to let the king&apos;s
           foolishness get him down: a court jester named Jokester.
         </p>
-
         <h4>Heading 4</h4>
         <p>
           The people of the kingdom, feeling uplifted by the laughter, started
@@ -68,14 +77,15 @@ function TypographyPage() {
           error of his ways and repealed the joke tax. Jokester was declared a
           hero, and the kingdom lived happily ever after.
         </p>
-        <h6>Heading 6</h6>
+        <h6 id="section2">Heading 6</h6>
         <p>
           Jokester began sneaking into the castle in the middle of the night and
-          leaving jokes all over the place: under the king's pillow, in his
-          soup, even in the royal toilet. The king was furious, but he couldn't
-          seem to stop Jokester.
+          leaving jokes all over the place: under the king&apos;s pillow, in his
+          soup, even in the royal toilet. The king was furious, but he
+          couldn&apos;t seem to stop Jokester.
         </p>
       </section>
+      <ScrollButton />
     </div>
   )
 }
