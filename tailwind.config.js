@@ -16,9 +16,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#0053A3",
-        secondary: "#dd9933",
-        gray: colors.slate,
         brand: {
           50: "#FDEDE8",
           100: "#FBDED5",
@@ -32,6 +29,7 @@ module.exports = {
           900: "#EC5324",
           950: "#7F260B",
         },
+        accent: colors.slate,
       },
       fontFamily: {
         display: ["var(--font-roboto)", ...fontFamily.sans],

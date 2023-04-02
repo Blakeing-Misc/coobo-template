@@ -14,7 +14,7 @@ export default function HomePage() {
             Beautifully designed components <br className="hidden sm:inline" />
             built with Radix UI and Tailwind CSS.
           </h1>
-          <p className="max-w-[700px] text-lg text-gray-700 sm:text-xl">
+          <p className="max-w-[700px] text-lg text-accent-700 sm:text-xl">
             Accessible and customizable components that you can copy and paste
             into your apps. Free. Open Source. And Next.js 13 Ready.
           </p>

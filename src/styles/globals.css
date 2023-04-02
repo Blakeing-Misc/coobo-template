@@ -5,7 +5,6 @@
 @layer base {
   :root {
     --header-height: 0;
-   
   }
 
   .body p {
@@ -89,6 +88,6 @@
     @apply text-sm font-medium leading-none;
   }
   .body blockquote {
-    @apply mt-6 border-l-2 border-gray-300 pl-6 italic text-gray-800;
+    @apply mt-6 border-l-2 border-accent-300 pl-6 italic text-accent-800;
   }
 }

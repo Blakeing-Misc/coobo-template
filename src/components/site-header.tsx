@@ -18,7 +18,7 @@ export function SiteHeader() {
     console.log(headerHeight)
   }, [])
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-b-gray-200 bg-white ">
+    <header className="sticky top-0 z-40 w-full border-b border-b-accent-200 bg-white ">
       <div className="container mx-auto flex h-full items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
@@ -32,7 +32,7 @@ export function SiteHeader() {
                 className={buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                  className: "text-gray-700 ",
+                  className: "text-accent-700 ",
                 })}
               >
                 <Icons.facebook className="h-5 w-5" />
@@ -48,7 +48,7 @@ export function SiteHeader() {
                 className={buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                  className: "text-gray-700 ",
+                  className: "text-accent-700 ",
                 })}
               >
                 <Icons.linkedin className="h-5 w-5 " />

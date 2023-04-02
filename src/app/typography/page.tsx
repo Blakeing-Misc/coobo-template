@@ -12,7 +12,7 @@ function TypographyPage() {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Typography
         </h1>
-        <p className="text-lg text-gray-700 sm:text-xl">
+        <p className="text-lg text-accent-700 sm:text-xl">
           Styles for headings, paragraphs, lists...etc
         </p>
         <div className="flex gap-4 ">

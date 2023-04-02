@@ -39,7 +39,7 @@ export default function RootLayout({
       )}
       lang="en"
     >
-      <body className="min-h-screen   bg-white  text-gray-900  ">
+      <body className="min-h-screen   bg-white  text-accent-900  ">
         {children}
         <Toaster />
       </body>
