@@ -28,26 +28,43 @@ function ColorsPage() {
     .slice(5)
 
   // Create a copy function that copies a string to the clipboard
-  const copyToClipboard = (str) => {
-    const el = document.createElement("textarea")
-    el.value = str
-    document.body.appendChild(el)
-    el.select()
-    document.execCommand("copy")
-    document.body.removeChild(el)
+  // const copyToClipboard = (str: string) => {
+  //   const el = document.createElement("textarea")
+  //   el.value = str
+  //   document.body.appendChild(el)
+  //   el.select()
+  //   document.execCommand("copy")
+  //   document.body.removeChild(el)
+  // }
+
+  const copyToClipboard = (value: string) => {
+    const textarea = document.createElement("textarea")
+    textarea.value = value
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy", false, textarea.value)
+    textarea.remove()
   }
 
   const { toast } = useToast()
 
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <section className="flex max-w-[980px] flex-col items-start gap-2">
+      <section className="flex  flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Colors
         </h1>
         <p className="text-lg text-accent-700 sm:text-xl">
-          Customizing the default color palette for your project. Edit these
-          colors in the tailwind.config.js file.
+          Custom default color palette for your project. Edit these colors in
+          the tailwind.config.js file. Reference this{" "}
+          <a
+            target="_blank"
+            className="underline underline-offset-2 hover:text-accent-500"
+            href="https://tailwindcss.com/docs/customizing-colors"
+          >
+            link
+          </a>{" "}
+          for further customization.
         </p>
       </section>
       <Separator className="my-4 " />

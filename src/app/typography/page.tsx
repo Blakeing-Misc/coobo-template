@@ -8,13 +8,27 @@ import { Text } from "@/components/ui/text"
 function TypographyPage() {
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <section className="flex max-w-[980px] flex-col items-start gap-2">
+      <section className="flex  flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Typography
         </h1>
         <p className="text-lg text-accent-700 sm:text-xl">
-          Styles for headings, paragraphs, lists...etc
+          Styles for headings, paragraphs, lists, etc. Update/optimize font
+          familes by referencing this{" "}
+          <a
+            target="_blank"
+            className="underline underline-offset-2 hover:text-accent-500"
+            href="https://nextjs.org/docs/basic-features/font-optimization"
+          >
+            link
+          </a>
+          .
         </p>
+        <small className="italic text-gray-500">
+          * To utlize these typography styles each element must be a child of
+          the body class. This can be edited in the global.css file within the
+          styles folder.
+        </small>
         <div className="flex gap-4 ">
           <a
             className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "

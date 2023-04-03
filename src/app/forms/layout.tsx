@@ -1,6 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 
-export default function FormsLayout({
+export default function ComponentsLayout({
   children,
 }: {
   children: React.ReactNode

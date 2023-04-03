@@ -27,6 +27,10 @@ export const siteConfig: SiteConfig = {
       title: "Colors",
       href: "/colors",
     },
+    {
+      title: "Forms",
+      href: "/forms",
+    },
   ],
   links: {
     linkedin: "https://www.linkedin.com/company/coobo-media",
