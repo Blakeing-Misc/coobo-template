@@ -108,8 +108,8 @@ function FormsPage() {
           .
         </p>
         <small className="italic text-gray-500">
-          * To connect to Formspree, you need to create an account and create a
-          new form. Go to the integration tab and copy the endpoint URL. Then,
+          * To connect to Formspree, you need to create an account. Create a new
+          form and go to the integration tab to copy the endpoint URL. Then,
           paste it in the .env file as NEXT_PUBLIC_FORMSPREE_ENDPOINT.
         </small>
       </section>
@@ -122,7 +122,6 @@ function FormsPage() {
           <div className="grid w-full  items-center gap-1.5">
             <Label htmlFor="email">Email*</Label>
             <Input
-              autoComplete="off"
               id="email"
               {...register("email")}
               type="email"
@@ -136,7 +135,6 @@ function FormsPage() {
           <div className="grid w-full gap-1.5">
             <Label htmlFor="message">Your Message*</Label>
             <Textarea
-              autoComplete="off"
               {...register("message", { required: true })}
               id="message"
               name="message"
