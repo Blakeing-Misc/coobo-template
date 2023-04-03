@@ -1,5 +1,6 @@
 "use client"
 
+import { useToast } from "@/hooks/use-toast"
 import { theme } from "tailwind.config.js"
 import * as colors from "tailwindcss/colors"
 
@@ -15,17 +16,28 @@ function ColorsPage() {
     name.startsWith("accent")
   )
 
-  const tailwindColors = Object.keys(colors).slice(5)
+  // const tailwindColors = Object.keys(colors).slice(5)
+
+  const tailwindColors = Object.keys(colors)
+    .filter(
+      (color) =>
+        !["warmGray", "trueGray", "coolGray", "blueGray", "lightBlue"].includes(
+          color
+        )
+    )
+    .slice(5)
 
   // Create a copy function that copies a string to the clipboard
-  // const copyToClipboard = (str) => {
-  //   const el = document.createElement("textarea")
-  //   el.value = str
-  //   document.body.appendChild(el)
-  //   el.select()
-  //   document.execCommand("copy")
-  //   document.body.removeChild(el)
-  // }
+  const copyToClipboard = (str) => {
+    const el = document.createElement("textarea")
+    el.value = str
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand("copy")
+    document.body.removeChild(el)
+  }
+
+  const { toast } = useToast()
 
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -34,7 +46,8 @@ function ColorsPage() {
           Colors
         </h1>
         <p className="text-lg text-accent-700 sm:text-xl">
-          Customizing the default color palette for your project.
+          Customizing the default color palette for your project. Edit these
+          colors in the tailwind.config.js file.
         </p>
       </section>
       <Separator className="my-4 " />
@@ -58,12 +71,31 @@ function ColorsPage() {
 
               // Generate a JSX element for the current shade
               return (
-                <div key={key}>
-                  <div
-                    className="h-10 w-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
+                <div className=" flex flex-col" key={key}>
+                  <button
+                    onClick={() => {
+                      try {
+                        copyToClipboard(hexValue)
+                        toast({
+                          title: "Copied to clipboard",
+                          description: `The color code ${hexValue} has been copied to your clipboard.`,
+                          duration: 3000,
+                        })
+                      } catch (err) {
+                        toast({
+                          title: "Uh oh! Something went wrong.",
+                          description: "There was a problem with your request.",
+                          duration: 5000,
+                        })
+                      }
+                    }}
+                    className=" h-10 w-10 rounded  sm:w-full"
                     style={{ backgroundColor: hexValue }}
                   />
-                  <small className="text-accent-900">{key}</small>
+                  <p className="mt-1 text-sm text-accent-900">{key}</p>
+                  <p className="text-xs lowercase text-accent-500">
+                    {hexValue}
+                  </p>
                 </div>
               )
             })
@@ -90,12 +122,31 @@ function ColorsPage() {
 
               // Generate a JSX element for the current shade
               return (
-                <div key={key}>
-                  <div
-                    className="h-10 w-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
+                <div className="flex flex-col " key={key}>
+                  <button
+                    onClick={() => {
+                      try {
+                        copyToClipboard(hexValue)
+                        toast({
+                          title: "Copied to clipboard",
+                          description: `The color code ${hexValue} has been copied to your clipboard.`,
+                          duration: 3000,
+                        })
+                      } catch (err) {
+                        toast({
+                          title: "Uh oh! Something went wrong.",
+                          description: "There was a problem with your request.",
+                          duration: 5000,
+                        })
+                      }
+                    }}
+                    className=" h-10 w-10 rounded  sm:w-full"
                     style={{ backgroundColor: hexValue }}
                   />
-                  <small className="text-accent-900">{key}</small>
+                  <p className="mt-1 text-sm text-accent-900">{key}</p>
+                  <p className="text-xs lowercase text-accent-500">
+                    {hexValue}
+                  </p>
                 </div>
               )
             })
@@ -123,12 +174,29 @@ function ColorsPage() {
 
               // Generate a JSX element for the current shade
               return (
-                <div key={key}>
-                  <div
-                    className="h-10 w-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
+                <div className="flex flex-col " key={key}>
+                  <button
+                    onClick={() => {
+                      try {
+                        copyToClipboard(hexValue)
+                        toast({
+                          title: "Copied to clipboard",
+                          description: `The color code ${hexValue} has been copied to your clipboard.`,
+                          duration: 3000,
+                        })
+                      } catch (err) {
+                        toast({
+                          title: "Uh oh! Something went wrong.",
+                          description: "There was a problem with your request.",
+                          duration: 5000,
+                        })
+                      }
+                    }}
+                    className=" h-10 w-10 rounded  sm:w-full"
                     style={{ backgroundColor: hexValue }}
                   />
-                  <small className="text-accent-900">{key}</small>
+                  <p className="mt-1 text-sm text-accent-900">{key}</p>
+                  <p className="text-xs text-accent-500">{hexValue}</p>
                 </div>
               )
             })
