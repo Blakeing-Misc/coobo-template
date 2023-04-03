@@ -3,6 +3,7 @@
 import React from "react"
 import { useToast } from "@/hooks/use-toast"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Loader2 } from "lucide-react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import * as z from "zod"
 
@@ -42,6 +43,9 @@ function FormsPage() {
 
   const onSubmit = async (data: any) => {
     try {
+      // Add a delay of 2 seconds before submitting the form
+      await new Promise((resolve) => setTimeout(resolve, 2500))
+
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT}`,
         {
@@ -67,9 +71,9 @@ function FormsPage() {
         duration: 5000,
       })
       reset()
-      setTimeout(function () {
-        location.reload() // reload page after delay
-      }, 5000) // delay in milliseconds (2 seconds in this example)
+      // setTimeout(function () {
+      //   location.reload() // reload page after delay
+      // }, 5000) // delay in milliseconds (2 seconds in this example)
     }
   }, [isSubmitSuccessful, reset, toast])
 
@@ -145,7 +149,14 @@ function FormsPage() {
         </div>
 
         <Button type="submit" disabled={isSubmitting}>
-          Submit
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />{" "}
+              <span>Submitting</span>
+            </>
+          ) : (
+            "Submit"
+          )}
         </Button>
       </form>
       <pre>{JSON.stringify(watchAllFields, null, 4)}</pre>
