@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { useToast } from "@/hooks/use-toast"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
@@ -31,7 +30,7 @@ function FormsPage() {
     handleSubmit: handleFormSubmit,
     reset,
     watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
   })
@@ -40,9 +39,6 @@ function FormsPage() {
 
   const onSubmit = async (data: any) => {
     try {
-      // Add a delay of 2 seconds before submitting the form
-      await new Promise((resolve) => setTimeout(resolve, 2500))
-
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT}`,
         {
@@ -53,26 +49,31 @@ function FormsPage() {
           body: JSON.stringify(data),
         }
       )
-      const responseData = await response.json()
-      console.log(responseData)
+      if (response.ok) {
+        console.log("Form submitted successfully")
+        toast({
+          title: "Form submitted successfully!",
+          description: "Thank you for your submission.",
+          duration: 5000,
+        })
+        reset()
+      } else {
+        const responseData = await response.json()
+        console.log("Form submission failed:", responseData)
+
+        if (responseData.error) {
+          toast({
+            title: "Uh oh! Something went wrong.",
+            description: responseData.error,
+            duration: 5000,
+            variant: "destructive",
+          })
+        }
+      }
     } catch (error) {
-      console.error(error)
+      console.log("Error submitting form:", error)
     }
   }
-
-  React.useEffect(() => {
-    if (isSubmitSuccessful) {
-      toast({
-        title: "Form submitted successfully!",
-        description: "Thank you for your submission.",
-        duration: 5000,
-      })
-      reset()
-      // setTimeout(function () {
-      //   location.reload() // reload page after delay
-      // }, 5000) // delay in milliseconds (2 seconds in this example)
-    }
-  }, [isSubmitSuccessful, reset, toast])
 
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -123,24 +124,30 @@ function FormsPage() {
             <Label htmlFor="email">Email*</Label>
             <Input
               id="email"
+              aria-invalid={errors.email ? "true" : "false"}
               {...register("email")}
               type="email"
               name="email"
             />
             {errors.email && (
-              <p className="text-sm text-red-500">{errors.email?.message}</p>
+              <p role="alert" className="text-sm text-red-500">
+                {errors.email?.message}
+              </p>
             )}
           </div>
 
           <div className="grid w-full gap-1.5">
             <Label htmlFor="message">Your Message*</Label>
             <Textarea
+              aria-invalid={errors.message ? "true" : "false"}
               {...register("message", { required: true })}
               id="message"
               name="message"
             />
             {errors.message && (
-              <p className="text-sm text-red-500">{errors.message?.message}</p>
+              <p role="alert" className="text-sm text-red-500">
+                {errors.message?.message}
+              </p>
             )}
           </div>
 
