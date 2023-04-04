@@ -33,8 +33,24 @@ function BlogPage() {
             href="https://www.contentlayer.dev/"
           >
             Contentlayer
-          </a>
-          .
+          </a>{" "}
+          and it&apos;s{" "}
+          <a
+            target="_blank"
+            className="underline underline-offset-2 hover:text-accent-500"
+            href="https://mdxjs.com/"
+          >
+            MDX
+          </a>{" "}
+          support via this{" "}
+          <a
+            target="_blank"
+            className="underline underline-offset-2 hover:text-accent-500"
+            href=" https://github.com/kentcdodds/mdx-bundler"
+          >
+            MDX Bundler
+          </a>{" "}
+          package.
         </p>
         <small className="italic text-gray-500">
           * This solution is meant to be used if client does not require a CMS

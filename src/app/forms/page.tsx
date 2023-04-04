@@ -52,7 +52,6 @@ function FormsPage() {
       if (response.ok) {
         console.log("Form submitted successfully")
         // Remove the classList from the password input element
-
         toast({
           title: "Form submitted successfully!",
           description: "Thank you for your submission.",
@@ -96,11 +95,11 @@ function FormsPage() {
           <a
             target="_blank"
             className="underline underline-offset-2 hover:text-accent-500"
-            href="https://github.com/colinhacks/zod"
+            href="https://zod.dev/"
           >
-            Zod Validation
-          </a>
-          , and{" "}
+            Zod
+          </a>{" "}
+          and{" "}
           <a
             target="_blank"
             className="underline underline-offset-2 hover:text-accent-500"

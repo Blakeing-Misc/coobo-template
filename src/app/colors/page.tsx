@@ -27,16 +27,6 @@ function ColorsPage() {
     )
     .slice(5)
 
-  // Create a copy function that copies a string to the clipboard
-  // const copyToClipboard = (str: string) => {
-  //   const el = document.createElement("textarea")
-  //   el.value = str
-  //   document.body.appendChild(el)
-  //   el.select()
-  //   document.execCommand("copy")
-  //   document.body.removeChild(el)
-  // }
-
   const copyToClipboard = (value: string) => {
     const textarea = document.createElement("textarea")
     textarea.value = value
