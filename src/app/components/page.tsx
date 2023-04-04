@@ -380,8 +380,8 @@ function ComponentsPage() {
           variant="outline"
           onClick={() => {
             toast({
-              title: "Uh oh! Something went wrong.",
-              description: "There was a problem with your request.",
+              title: "Your toast title",
+              description: "Your toast description",
               duration: 5000,
             })
           }}

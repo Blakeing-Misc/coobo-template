@@ -1,7 +1,13 @@
 import { NavItem } from "@/types/nav"
 
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? process.env.NEXT_PUBLIC_BASE_URL
+    : "http://localhost:3000"
+
 interface SiteConfig {
   name: string
+  url: string
   description: string
   mainNav: NavItem[]
   links: {
@@ -12,6 +18,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Coobo Template",
+  url: baseUrl!,
   description:
     "Beautifully designed components built with Radix UI and Tailwind CSS.",
   mainNav: [
@@ -30,6 +37,10 @@ export const siteConfig: SiteConfig = {
     {
       title: "Forms",
       href: "/forms",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
     },
   ],
   links: {
