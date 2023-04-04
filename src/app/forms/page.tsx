@@ -51,6 +51,8 @@ function FormsPage() {
       )
       if (response.ok) {
         console.log("Form submitted successfully")
+        // Remove the classList from the password input element
+
         toast({
           title: "Form submitted successfully!",
           description: "Thank you for your submission.",
@@ -82,7 +84,7 @@ function FormsPage() {
           Forms
         </h1>
         <p className="text-lg text-accent-700 sm:text-xl">
-          Full featured forms using{" "}
+          Full featured secure forms using{" "}
           <a
             target="_blank"
             className="underline underline-offset-2 hover:text-accent-500"

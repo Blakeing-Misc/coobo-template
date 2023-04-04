@@ -6,7 +6,10 @@
   :root {
     --header-height: 0;
   }
-
+  /*1Password style override*/
+  div input {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
   .body p {
     @apply leading-7 text-base [&:not(:first-child)]:mt-4;
   }

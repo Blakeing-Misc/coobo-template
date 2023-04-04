@@ -38,7 +38,8 @@ function BlogPage() {
         </p>
         <small className="italic text-gray-500">
           * This solution is meant to be used if client does not require a CMS
-          yet would still like some sort of blog functionality.
+          yet would still like some sort of blog functionality that would be
+          easy for us to update.
         </small>
       </section>
       <Separator className="my-4 " />
