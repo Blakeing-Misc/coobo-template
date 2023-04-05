@@ -1,57 +1,115 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
+import { ArrowLeft, ArrowRight } from "lucide-react"
+import ReactPaginate from "react-paginate"
 
+import { slugify } from "@/lib/slugify"
+import { Separator } from "./ui/separator"
 
-
-interface Props {
-  currentPage: number
-  totalPages: number
-  onPageChange: (page: number) => void
+function CurrentPosts({ currentPosts }) {
+  return (
+    <>
+      {currentPosts &&
+        currentPosts.map((post) => (
+          <article
+            key={post.slug}
+            className="relative isolate flex flex-col gap-8 lg:flex-row"
+          >
+            <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
+              <Image
+                src={post.image!}
+                fill
+                alt=""
+                className="absolute inset-0 h-full w-full rounded-2xl bg-slate-50 object-cover"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10" />
+            </div>
+            <div>
+              <div className="flex items-center gap-x-4 text-xs">
+                <time dateTime={post.publishedAt} className="text-slate-500">
+                  {post.publishedAt}
+                </time>
+                {post.categories?.map((category: { title }) => (
+                  <Link
+                    key={category.title}
+                    href={`/blog/category/${slugify(category.title!)}`}
+                    className="relative z-10 rounded-full bg-slate-50 px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100"
+                  >
+                    {category.title}
+                  </Link>
+                ))}
+              </div>
+              <div className="group relative max-w-xl">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-slate-600">
+                  <Link href={`/blog/${post.slug}`}>
+                    <span className="absolute inset-0" />
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="mt-5 text-sm leading-6 text-slate-600">
+                  {post.excerpt}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))}
+    </>
+  )
 }
 
-export default function Pagination({
-  currentPage,
-  totalPages,
-  onPageChange,
-}: Props) {
-  const pages = []
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(i)
-  }
+export function PaginatedPosts({ postsPerPage, posts }) {
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [postOffset, setPostOffset] = useState(0)
 
-  const handleClick = (page: number) => {
-    onPageChange(page)
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
+  const endOffset = postOffset + postsPerPage
+  console.log(`Loading items from ${postOffset} to ${endOffset}`)
+  const currentPosts = posts.slice(postOffset, endOffset)
+  const pageCount = Math.ceil(posts.length / postsPerPage)
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event: { selected: number }) => {
+    const newOffset = (event.selected * postsPerPage) % posts.length
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    )
+    setPostOffset(newOffset)
   }
 
   return (
-    <nav>
-      <ul>
-        {currentPage > 1 && (
-          <li>
-            <Link href={`/?page=${currentPage - 1}`}>
-              <a onClick={() => handleClick(currentPage - 1)}>Prev</a>
-            </Link>
-          </li>
-        )}
-        {pages.map((page) => (
-          <li key={page}>
-            <Link href={`/?page=${page}`}>
-              <a
-                onClick={() => handleClick(page)}
-                className={currentPage === page ? "active" : ""}
-              >
-                {page}
-              </a>
-            </Link>
-          </li>
-        ))}
-        {currentPage < totalPages && (
-          <li>
-            <Link href={`/?page=${currentPage + 1}`}>
-              <a onClick={() => handleClick(currentPage + 1)}>Next</a>
-            </Link>
-          </li>
-        )}
-      </ul>
-    </nav>
+    <>
+      <CurrentPosts currentPosts={currentPosts} />
+      <Separator className="my-4 " />
+      {posts.length > postsPerPage ? (
+        <ReactPaginate
+          activeLinkClassName="bg-gray-100"
+          pageLinkClassName="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+          className="mx-auto hidden  max-w-fit gap-4 sm:flex sm:flex-1 sm:items-center sm:justify-between"
+          breakLabel="..."
+          nextLabel={
+            <div className="flex items-center text-sm">
+              <span>Next</span>
+              <ArrowRight className="ml-2 h-5 w-5  text-gray-400" />
+            </div>
+          }
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          disabledClassName="invisible"
+          previousLabel={
+            <div className="flex items-center">
+              <ArrowLeft className="mr-2 h-5 w-5  text-gray-400" />
+              <span className="text-sm">Previous</span>
+            </div>
+          }
+        />
+      ) : null}
+    </>
   )
 }

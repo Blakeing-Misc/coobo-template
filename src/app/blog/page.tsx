@@ -1,16 +1,37 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { pick } from "@contentlayer/client"
 import { allPosts } from "contentlayer/generated"
 
 import { slugify } from "@/lib/slugify"
-import Pagination from "@/components/pagination"
+import { PaginatedPosts } from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read my thoughts on software development, design, and more.",
 }
+
+const posts = allPosts
+  .map((post) =>
+    pick(post, [
+      "title",
+      "slug",
+      "publishedAt",
+      "excerpt",
+      "draft",
+      "image",
+      "tags",
+      "categories",
+    ])
+  )
+  .sort((a, b) => {
+    if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+      return -1
+    }
+    return 1
+  })
 
 function BlogPage() {
   return (
@@ -36,7 +57,7 @@ function BlogPage() {
           >
             MDX
           </a>{" "}
-          support via this{" "}
+          support via the{" "}
           <a
             target="_blank"
             className="underline underline-offset-2 hover:text-accent-500"
@@ -52,57 +73,8 @@ function BlogPage() {
         </small>
       </section>
       <Separator className="my-4 " />
-      <div className="space-y-20  lg:space-y-20">
-        {allPosts
-          .sort((a, b) => {
-            if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-              return -1
-            }
-            return 1
-          })
-          .map((post) => (
-            <article
-              key={post.slug}
-              className="relative isolate flex flex-col gap-8 lg:flex-row"
-            >
-              <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
-                <Image
-                  src={post.image!}
-                  fill
-                  alt=""
-                  className="absolute inset-0 h-full w-full rounded-2xl bg-slate-50 object-cover"
-                />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10" />
-              </div>
-              <div>
-                <div className="flex items-center gap-x-4 text-xs">
-                  <time dateTime={post.publishedAt} className="text-slate-500">
-                    {post.publishedAt}
-                  </time>
-                  {post.categories?.map((category) => (
-                    <Link
-                      key={category.title}
-                      href={`/blog/category/${slugify(category.title!)}`}
-                      className="relative z-10 rounded-full bg-slate-50 px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100"
-                    >
-                      {category.title}
-                    </Link>
-                  ))}
-                </div>
-                <div className="group relative max-w-xl">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-slate-600">
-                    <Link href={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-5 text-sm leading-6 text-slate-600">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
+      <div className="mt-10 space-y-20 lg:space-y-20">
+        <PaginatedPosts posts={posts} postsPerPage={2} />
       </div>
     </div>
   )
