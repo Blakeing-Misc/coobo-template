@@ -10,10 +10,6 @@ import { slugify } from "@/lib/slugify"
 import { PaginatedPosts } from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 
-interface Params {
-  slug: string
-}
-
 export async function generateStaticParams() {
   const categories = new Set(allPosts.flatMap((p) => p.categories))
   // console.log("categories:", categories)
