@@ -1,10 +1,18 @@
 "use client"
 
 import { useToast } from "@/hooks/use-toast"
+import { Plus } from "lucide-react"
 import { theme } from "tailwind.config.js"
 import * as colors from "tailwindcss/colors"
 
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 function ColorsPage() {
   const themeColors = theme.extend.colors
@@ -79,26 +87,37 @@ function ColorsPage() {
               // Generate a JSX element for the current shade
               return (
                 <div className=" flex flex-col" key={key}>
-                  <button
-                    onClick={() => {
-                      try {
-                        copyToClipboard(hexValue)
-                        toast({
-                          title: "Copied to clipboard",
-                          description: `The color code ${hexValue} has been copied to your clipboard.`,
-                          duration: 3000,
-                        })
-                      } catch (err) {
-                        toast({
-                          title: "Uh oh! Something went wrong.",
-                          description: "There was a problem with your request.",
-                          duration: 5000,
-                        })
-                      }
-                    }}
-                    className=" h-10 w-10 rounded  sm:w-full"
-                    style={{ backgroundColor: hexValue }}
-                  />
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => {
+                            try {
+                              copyToClipboard(hexValue)
+                              toast({
+                                title: "Copied to clipboard",
+                                description: `The color code ${hexValue} has been copied to your clipboard.`,
+                                duration: 3000,
+                              })
+                            } catch (err) {
+                              toast({
+                                title: "Uh oh! Something went wrong.",
+                                description:
+                                  "There was a problem with your request.",
+                                duration: 5000,
+                              })
+                            }
+                          }}
+                          className=" h-10 w-10 rounded  sm:w-full"
+                          style={{ backgroundColor: hexValue }}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs">Copy</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+
                   <p className="mt-1 text-sm text-accent-900">{key}</p>
                   <p className="text-xs lowercase text-accent-500">
                     {hexValue}
@@ -130,26 +149,36 @@ function ColorsPage() {
               // Generate a JSX element for the current shade
               return (
                 <div className="flex flex-col " key={key}>
-                  <button
-                    onClick={() => {
-                      try {
-                        copyToClipboard(hexValue)
-                        toast({
-                          title: "Copied to clipboard",
-                          description: `The color code ${hexValue} has been copied to your clipboard.`,
-                          duration: 3000,
-                        })
-                      } catch (err) {
-                        toast({
-                          title: "Uh oh! Something went wrong.",
-                          description: "There was a problem with your request.",
-                          duration: 5000,
-                        })
-                      }
-                    }}
-                    className=" h-10 w-10 rounded  sm:w-full"
-                    style={{ backgroundColor: hexValue }}
-                  />
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => {
+                            try {
+                              copyToClipboard(hexValue)
+                              toast({
+                                title: "Copied to clipboard",
+                                description: `The color code ${hexValue} has been copied to your clipboard.`,
+                                duration: 3000,
+                              })
+                            } catch (err) {
+                              toast({
+                                title: "Uh oh! Something went wrong.",
+                                description:
+                                  "There was a problem with your request.",
+                                duration: 5000,
+                              })
+                            }
+                          }}
+                          className=" h-10 w-10 rounded  sm:w-full"
+                          style={{ backgroundColor: hexValue }}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs">Copy</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                   <p className="mt-1 text-sm text-accent-900">{key}</p>
                   <p className="text-xs lowercase text-accent-500">
                     {hexValue}
@@ -182,26 +211,36 @@ function ColorsPage() {
               // Generate a JSX element for the current shade
               return (
                 <div className="flex flex-col " key={key}>
-                  <button
-                    onClick={() => {
-                      try {
-                        copyToClipboard(hexValue)
-                        toast({
-                          title: "Copied to clipboard",
-                          description: `The color code ${hexValue} has been copied to your clipboard.`,
-                          duration: 3000,
-                        })
-                      } catch (err) {
-                        toast({
-                          title: "Uh oh! Something went wrong.",
-                          description: "There was a problem with your request.",
-                          duration: 5000,
-                        })
-                      }
-                    }}
-                    className=" h-10 w-10 rounded  sm:w-full"
-                    style={{ backgroundColor: hexValue }}
-                  />
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => {
+                            try {
+                              copyToClipboard(hexValue)
+                              toast({
+                                title: "Copied to clipboard",
+                                description: `The color code ${hexValue} has been copied to your clipboard.`,
+                                duration: 3000,
+                              })
+                            } catch (err) {
+                              toast({
+                                title: "Uh oh! Something went wrong.",
+                                description:
+                                  "There was a problem with your request.",
+                                duration: 5000,
+                              })
+                            }
+                          }}
+                          className=" h-10 w-10 rounded  sm:w-full"
+                          style={{ backgroundColor: hexValue }}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs">Copy</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                   <p className="mt-1 text-sm text-accent-900">{key}</p>
                   <p className="text-xs text-accent-500">{hexValue}</p>
                 </div>

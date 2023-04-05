@@ -41,7 +41,7 @@ function BlogPage() {
           Blog
         </h1>
         <p className="text-lg text-accent-700 sm:text-xl">
-          This is a blog demo demonstrating the use of the{" "}
+          Demonstrating the use of the{" "}
           <a
             target="_blank"
             className="underline underline-offset-2 hover:text-accent-500"
