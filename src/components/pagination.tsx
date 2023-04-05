@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import ReactPaginate from "react-paginate"
 
 import { slugify } from "@/lib/slugify"
+import { Button } from "./ui/button"
 import { Separator } from "./ui/separator"
 
 function CurrentPosts({ currentPosts }) {
@@ -23,33 +24,33 @@ function CurrentPosts({ currentPosts }) {
                 src={post.image!}
                 fill
                 alt=""
-                className="absolute inset-0 h-full w-full rounded-2xl bg-slate-50 object-cover"
+                className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10" />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
             </div>
             <div>
               <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.publishedAt} className="text-slate-500">
+                <time dateTime={post.publishedAt} className="text-gray-500">
                   {post.publishedAt}
                 </time>
                 {post.categories?.map((category: { title }) => (
                   <Link
                     key={category.title}
                     href={`/blog/category/${slugify(category.title!)}`}
-                    className="relative z-10 rounded-full bg-slate-50 px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100"
+                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
                     {category.title}
                   </Link>
                 ))}
               </div>
               <div className="group relative max-w-xl">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-slate-600">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <Link href={`/blog/${post.slug}`}>
                     <span className="absolute inset-0" />
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-5 text-sm leading-6 text-slate-600">
+                <p className="mt-5 text-sm leading-6 text-gray-600 group-hover:text-gray-500">
                   {post.excerpt}
                 </p>
               </div>
