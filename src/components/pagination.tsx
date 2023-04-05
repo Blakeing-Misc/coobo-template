@@ -90,7 +90,7 @@ export function PaginatedPosts({ postsPerPage, posts }) {
         <ReactPaginate
           activeLinkClassName="bg-gray-100"
           pageLinkClassName="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          className="mx-auto hidden  max-w-fit gap-4 sm:flex sm:flex-1 sm:items-center sm:justify-between"
+          className="mx-auto   flex max-w-fit flex-1 items-center justify-between gap-4"
           breakLabel="..."
           nextLabel={
             <div className="flex items-center text-sm">
