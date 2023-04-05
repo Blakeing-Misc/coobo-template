@@ -1,4 +1,8 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource,
+} from "contentlayer/source-files"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -28,6 +32,20 @@ const computedFields = {
   },
 }
 
+const Tag = defineNestedType(() => ({
+  name: "Tag",
+  fields: {
+    title: { type: "string" },
+  },
+}))
+
+const Categories = defineNestedType(() => ({
+  name: "Categories",
+  fields: {
+    title: { type: "string" },
+  },
+}))
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `**/*.mdx`,
@@ -41,7 +59,7 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    summary: {
+    excerpt: {
       type: "string",
       required: true,
     },
@@ -50,7 +68,19 @@ export const Post = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: { type: "string" },
+      of: Tag,
+    },
+    categories: {
+      type: "list",
+      of: Categories,
+      required: true,
+    },
+    slug: {
+      type: "string",
+    },
+    draft: {
+      type: "string",
+      required: true,
     },
   },
   computedFields,

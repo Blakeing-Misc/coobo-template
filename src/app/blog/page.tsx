@@ -3,20 +3,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { allPosts } from "contentlayer/generated"
 
+import { slugify } from "@/lib/slugify"
+import Pagination from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read my thoughts on software development, design, and more.",
 }
-
-const slugify = (str: string) =>
-  str
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "")
 
 function BlogPage() {
   return (
@@ -54,8 +48,7 @@ function BlogPage() {
         </p>
         <small className="italic text-gray-500">
           * This solution is meant to be used if client does not require a CMS
-          yet would still like some sort of blog functionality that would be
-          easy for us to update.
+          yet would still like some sort of blog functionality.
         </small>
       </section>
       <Separator className="my-4 " />
@@ -86,13 +79,13 @@ function BlogPage() {
                   <time dateTime={post.publishedAt} className="text-slate-500">
                     {post.publishedAt}
                   </time>
-                  {post.tags?.map((tag) => (
+                  {post.categories?.map((category) => (
                     <Link
-                      key={tag}
-                      href={`/blog/${slugify(tag)}`}
+                      key={category.title}
+                      href={`/blog/category/${slugify(category.title!)}`}
                       className="relative z-10 rounded-full bg-slate-50 px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100"
                     >
-                      {tag}
+                      {category.title}
                     </Link>
                   ))}
                 </div>
@@ -104,7 +97,7 @@ function BlogPage() {
                     </Link>
                   </h3>
                   <p className="mt-5 text-sm leading-6 text-slate-600">
-                    {post.summary}
+                    {post.excerpt}
                   </p>
                 </div>
               </div>

@@ -31,7 +31,7 @@ export async function generateMetadata({
   const {
     title,
     publishedAt: publishedTime,
-    summary: description,
+    excerpt: description,
     image,
     slug,
   } = post
