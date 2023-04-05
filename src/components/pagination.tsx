@@ -7,7 +7,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import ReactPaginate from "react-paginate"
 
 import { slugify } from "@/lib/slugify"
-import { Button } from "./ui/button"
 import { Separator } from "./ui/separator"
 
 function CurrentPosts({ currentPosts }) {

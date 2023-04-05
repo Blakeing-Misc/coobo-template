@@ -37,7 +37,7 @@ function Sidebar() {
               <div className="shrink-0">
                 <Image
                   src={product.image!}
-                  alt={product.imageAlt}
+                  alt={product.title}
                   width={80}
                   height={80}
                   className=" rounded-md"
