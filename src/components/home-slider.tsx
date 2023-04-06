@@ -63,7 +63,7 @@ export default function HomeSlider() {
         <div className="keen-slider__slide ">
           <div
             style={{ opacity: opacities[0] }}
-            className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
+            className="relative isolate overflow-hidden bg-gradient-to-b from-orange-100/20"
           >
             <div className="mx-auto  pb-24 pt-10 lg:container sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40">
               <div className="px-6 lg:px-0 lg:pt-4">
@@ -94,12 +94,13 @@ export default function HomeSlider() {
                     <div className="mt-10 flex items-center gap-x-6">
                       <a
                         href="#"
-                        className="rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                        className="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
                       >
                         Documentation
                       </a>
                       <a
-                        href="#"
+                        target="_blank"
+                        href="https://github.com/coobomedia/coobo-template"
                         className="text-sm font-semibold leading-6 text-gray-900"
                       >
                         View on GitHub <span aria-hidden="true">→</span>
@@ -136,57 +137,58 @@ export default function HomeSlider() {
                             <pre className="text-[0.8125rem] leading-6 text-gray-300">
                               <code>
                                 import {"{"}{" "}
-                                <span className="text-[#7dd3fc]">useState</span>{" "}
+                                <span className="text-orange-200">
+                                  useState
+                                </span>{" "}
                                 {"}"} from{" "}
-                                <span className="text-emerald-300">
-                                  'react'
-                                </span>
+                                <span className="text-orange-300">'react'</span>
                                 {"\n"}import {"{"}{" "}
-                                <span className="text-[#7dd3fc]">Switch</span>{" "}
+                                <span className="text-orange-200">Switch</span>{" "}
                                 {"}"} from{" "}
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   '@headlessui/react'
                                 </span>
                                 {"\n"}
                                 {"\n"}
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   function Example
                                 </span>
                                 () {"{"}
                                 {"\n"}
                                 {"    "}const [
-                                <span className="text-[#7dd3fc]">enabled</span>,{" "}
-                                <span className="text-[#7dd3fc]">
+                                <span className="text-orange-200">enabled</span>
+                                ,{" "}
+                                <span className="text-orange-200">
                                   setEnabled
                                 </span>
                                 ] = useState(
-                                <span className="text-[#7dd3fc]">true</span>)
+                                <span className="text-orange-200">true</span>)
                                 {"\n"}
                                 {"\n"}
                                 {"    "}return ({"\n"}
                                 {"      "}&lt;
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   form
                                 </span>{" "}
                                 action="/
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   notification-settings
                                 </span>
                                 " method="
-                                <span className="text-emerald-300">post</span>
+                                <span className="text-orange-300">post</span>
                                 "&gt;{"\n"}
                                 {"        "}&lt;
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   Switch
                                 </span>{" "}
                                 checked={"{"}
-                                <span className="text-[#7dd3fc]">enabled</span>
+                                <span className="text-orange-200">enabled</span>
                                 {"}"} onChange={"{"}
-                                <span className="text-[#7dd3fc]">
+                                <span className="text-orange-200">
                                   setEnabled
                                 </span>
                                 {"}"} name="
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   notifications
                                 </span>
                                 "&gt;{"\n"}
@@ -196,15 +198,15 @@ export default function HomeSlider() {
                                 {"}"}
                                 {"\n"}
                                 {"        "}&lt;/
-                                <span className="text-indigo-400">Switch</span>
+                                <span className="text-orange-400">Switch</span>
                                 &gt;{"\n"}
                                 {"        "}&lt;
-                                <span className="text-indigo-400">button</span>
+                                <span className="text-orange-400">button</span>
                                 &gt;Submit&lt;/
-                                <span className="text-indigo-400">button</span>
+                                <span className="text-orange-400">button</span>
                                 &gt;{"\n"}
                                 {"      "}&lt;/
-                                <span className="text-indigo-400">form</span>
+                                <span className="text-orange-400">form</span>
                                 &gt;{"\n"}
                                 {"    "}){"\n"}
                                 {"}"}
@@ -228,7 +230,7 @@ export default function HomeSlider() {
         <div className="keen-slider__slide ">
           <div
             style={{ opacity: opacities[1] }}
-            className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
+            className="relative isolate overflow-hidden bg-gradient-to-b from-orange-100/20"
           >
             <div className="container  mx-auto pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40">
               <div className="px-6 lg:px-0 lg:pt-4">
@@ -259,12 +261,13 @@ export default function HomeSlider() {
                     <div className="mt-10 flex items-center gap-x-6">
                       <a
                         href="#"
-                        className="rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                        className="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
                       >
                         Documentation
                       </a>
                       <a
-                        href="#"
+                        target="_blank"
+                        href="https://github.com/coobomedia/coobo-template"
                         className="text-sm font-semibold leading-6 text-gray-900"
                       >
                         View on GitHub <span aria-hidden="true">→</span>
@@ -301,57 +304,58 @@ export default function HomeSlider() {
                             <pre className="text-[0.8125rem] leading-6 text-gray-300">
                               <code>
                                 import {"{"}{" "}
-                                <span className="text-[#7dd3fc]">useState</span>{" "}
+                                <span className="text-orange-200">
+                                  useState
+                                </span>{" "}
                                 {"}"} from{" "}
-                                <span className="text-emerald-300">
-                                  'react'
-                                </span>
+                                <span className="text-orange-300">'react'</span>
                                 {"\n"}import {"{"}{" "}
-                                <span className="text-[#7dd3fc]">Switch</span>{" "}
+                                <span className="text-orange-200">Switch</span>{" "}
                                 {"}"} from{" "}
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   '@headlessui/react'
                                 </span>
                                 {"\n"}
                                 {"\n"}
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   function Example
                                 </span>
                                 () {"{"}
                                 {"\n"}
                                 {"    "}const [
-                                <span className="text-[#7dd3fc]">enabled</span>,{" "}
-                                <span className="text-[#7dd3fc]">
+                                <span className="text-orange-200">enabled</span>
+                                ,{" "}
+                                <span className="text-orange-200">
                                   setEnabled
                                 </span>
                                 ] = useState(
-                                <span className="text-[#7dd3fc]">true</span>)
+                                <span className="text-orange-200">true</span>)
                                 {"\n"}
                                 {"\n"}
                                 {"    "}return ({"\n"}
                                 {"      "}&lt;
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   form
                                 </span>{" "}
                                 action="/
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   notification-settings
                                 </span>
                                 " method="
-                                <span className="text-emerald-300">post</span>
+                                <span className="text-orange-300">post</span>
                                 "&gt;{"\n"}
                                 {"        "}&lt;
-                                <span className="text-indigo-400">
+                                <span className="text-orange-400">
                                   Switch
                                 </span>{" "}
                                 checked={"{"}
-                                <span className="text-[#7dd3fc]">enabled</span>
+                                <span className="text-orange-200">enabled</span>
                                 {"}"} onChange={"{"}
-                                <span className="text-[#7dd3fc]">
+                                <span className="text-orange-200">
                                   setEnabled
                                 </span>
                                 {"}"} name="
-                                <span className="text-emerald-300">
+                                <span className="text-orange-300">
                                   notifications
                                 </span>
                                 "&gt;{"\n"}
@@ -361,15 +365,15 @@ export default function HomeSlider() {
                                 {"}"}
                                 {"\n"}
                                 {"        "}&lt;/
-                                <span className="text-indigo-400">Switch</span>
+                                <span className="text-orange-400">Switch</span>
                                 &gt;{"\n"}
                                 {"        "}&lt;
-                                <span className="text-indigo-400">button</span>
+                                <span className="text-orange-400">button</span>
                                 &gt;Submit&lt;/
-                                <span className="text-indigo-400">button</span>
+                                <span className="text-orange-400">button</span>
                                 &gt;{"\n"}
                                 {"      "}&lt;/
-                                <span className="text-indigo-400">form</span>
+                                <span className="text-orange-400">form</span>
                                 &gt;{"\n"}
                                 {"    "}){"\n"}
                                 {"}"}
