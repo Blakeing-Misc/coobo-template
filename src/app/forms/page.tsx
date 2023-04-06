@@ -78,7 +78,7 @@ function FormsPage() {
 
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <section className="flex  flex-col items-start gap-2">
+      <section className="flex  flex-col items-start gap-4">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Forms
         </h1>

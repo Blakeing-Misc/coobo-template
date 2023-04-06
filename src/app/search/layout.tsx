@@ -2,7 +2,7 @@ import SearchInput from "@/components/search-input"
 import Sidebar from "@/components/sidebar"
 import { SiteHeader } from "@/components/site-header"
 
-export default function BlogLayout({
+export default function SearchLayout({
   children,
 }: {
   children: React.ReactNode
