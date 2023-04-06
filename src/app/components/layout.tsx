@@ -7,7 +7,7 @@ export default function ComponentsLayout({
 }) {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader position="sticky" />
       {children}
     </main>
   )

@@ -9,7 +9,7 @@ export default function BlogLayout({
 }) {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader position="sticky" />
 
       <div className="container mx-auto flex items-start gap-x-20 py-10 ">
         <main className="flex-1"> {children}</main>

@@ -7,7 +7,7 @@ export default function FormsLayout({
 }) {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader position="sticky" />
       {children}
     </main>
   )

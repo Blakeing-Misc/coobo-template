@@ -49,7 +49,14 @@ function TypographyPage() {
           >
             default styles
           </a>{" "}
-          this plugin provides for a more in-depth analysis.
+          this plugin provides for a more in-depth analysis and checkout the{" "}
+          <Link
+            className="underline underline-offset-2 hover:text-accent-500"
+            href="/blog"
+          >
+            blog
+          </Link>{" "}
+          to see it in action.
         </small>
       </section>
       <Separator className="my-4 " />

@@ -4,11 +4,16 @@ import { useEffect } from "react"
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { buttonVariants } from "@/components/ui/button"
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  position?: "fixed" | "sticky" | "relative"
+}
+
+export function SiteHeader({ position }: SiteHeaderProps) {
   useEffect(() => {
     const headerHeight = document.querySelector("header")!.offsetHeight
     document.documentElement.style.setProperty(
@@ -18,7 +23,12 @@ export function SiteHeader() {
     console.log(headerHeight)
   }, [])
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-b-accent-200 bg-white ">
+    <header
+      className={cn(
+        position,
+        "top-0 z-40 w-full border-b border-b-accent-200 bg-white"
+      )}
+    >
       <div className="container mx-auto flex h-full items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">

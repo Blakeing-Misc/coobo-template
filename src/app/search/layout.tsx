@@ -9,7 +9,7 @@ export default function SearchLayout({
 }) {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader position="sticky" />
       <div className="container mx-auto flex items-start gap-x-20 py-10 ">
         <main className="flex-1"> {children}</main>
         <aside className="sticky top-[calc(2rem_+_var(--header-height))] hidden w-96 shrink-0 space-y-10 xl:block">

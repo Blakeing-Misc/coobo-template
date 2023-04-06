@@ -7,7 +7,7 @@ export default function ColorsLayout({
 }) {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader position="sticky" />
       {children}
     </main>
   )
