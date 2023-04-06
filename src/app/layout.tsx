@@ -1,6 +1,7 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
 import { Archivo, Roboto } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="min-h-screen   bg-white  text-accent-900  ">
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )

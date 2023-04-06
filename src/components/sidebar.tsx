@@ -63,7 +63,7 @@ function Sidebar() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-1 line-clamp-2 text-xs text-gray-500">
+                <p className="mt-1 line-clamp-3 text-xs text-gray-500">
                   {product.excerpt}
                 </p>
               </div>
