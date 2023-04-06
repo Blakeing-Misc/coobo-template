@@ -1,10 +1,7 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
 import { pick } from "@contentlayer/client"
 import { allPosts } from "contentlayer/generated"
 
-import { slugify } from "@/lib/slugify"
 import { PaginatedPosts } from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 

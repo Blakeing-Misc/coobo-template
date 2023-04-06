@@ -31,10 +31,6 @@ export default async function handler(
     try {
       const { q: query } = req.query
 
-      // if (typeof query !== "string") {
-      //   throw new Error("Invalid request")
-      // }
-
       if (typeof query !== "string" || query.length === 0) {
         // Check if the query is not empty or undefined
         throw new Error("Invalid request")
