@@ -3,16 +3,24 @@
 import { useKeenSlider } from "keen-slider/react"
 
 import "keen-slider/keen-slider.min.css"
-import Image from "next/image"
+import { useState } from "react"
 import { ChevronRight } from "lucide-react"
-import Balancer from "react-wrap-balancer"
-
-import logoIcon from "/public/logo-icon.png"
 
 export default function HomeSlider() {
+  const [opacities, setOpacities] = useState<number[]>([])
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
+      slides: 2,
       loop: true,
+      defaultAnimation: {
+        duration: 2500,
+      },
+      detailsChanged(s) {
+        const new_opacities = s.track.details.slides.map(
+          (slide) => slide.portion
+        )
+        setOpacities(new_opacities)
+      },
     },
     [
       (slider) => {
@@ -53,7 +61,10 @@ export default function HomeSlider() {
         className="keen-slider min-h-screen pt-[--header-height]"
       >
         <div className="keen-slider__slide ">
-          <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
+          <div
+            style={{ opacity: opacities[0] }}
+            className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
+          >
             <div className="mx-auto  pb-24 pt-10 lg:container sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40">
               <div className="px-6 lg:px-0 lg:pt-4">
                 <div className="mx-auto max-w-2xl">
@@ -215,7 +226,10 @@ export default function HomeSlider() {
           </div>
         </div>
         <div className="keen-slider__slide ">
-          <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
+          <div
+            style={{ opacity: opacities[1] }}
+            className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
+          >
             <div className="container  mx-auto pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40">
               <div className="px-6 lg:px-0 lg:pt-4">
                 <div className="mx-auto max-w-2xl">
