@@ -51,7 +51,7 @@ function FormsPage() {
       )
       if (response.ok) {
         console.log("Form submitted successfully")
-        // Remove the classList from the password input element
+
         toast({
           title: "Form submitted successfully!",
           description: "Thank you for your submission.",

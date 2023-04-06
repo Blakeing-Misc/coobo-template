@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname, useSelectedLayoutSegment } from "next/navigation"
 
 import { NavItem } from "@/types/nav"
 import { cn } from "@/lib/utils"
@@ -25,18 +28,7 @@ export function MainNav({ items }: MainNavProps) {
         <nav className="hidden gap-6 md:flex">
           {items?.map(
             (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-lg font-semibold text-slate-600 hover:text-slate-900  sm:text-sm",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
+              item.slug && <GlobalNavItem key={index} item={item} />
           )}
         </nav>
       ) : null}
@@ -53,5 +45,29 @@ export function MainNav({ items }: MainNavProps) {
         </Sheet>
       </div>
     </div>
+  )
+}
+
+function GlobalNavItem({ item }: { item: NavItem }) {
+  // const segment = useSelectedLayoutSegment()
+  const pathname = usePathname()
+
+  const isActive = item.slug === pathname
+
+  return (
+    <Link
+      // href={`/${item.slug}`}
+      href={item.slug!}
+      className={cn(
+        "flex items-center text-lg font-semibold sm:text-sm",
+        {
+          "text-gray-600 hover:text-gray-900": !isActive,
+          "underline decoration-2 underline-offset-8": isActive,
+        },
+        item.disabled && "cursor-not-allowed opacity-80"
+      )}
+    >
+      {item.title}
+    </Link>
   )
 }

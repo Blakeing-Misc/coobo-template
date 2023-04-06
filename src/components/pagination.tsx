@@ -35,7 +35,7 @@ function CurrentPosts({ currentPosts }) {
                 {post.categories?.map((category: { title }) => (
                   <Link
                     key={category.title}
-                    href={`/blog/category/${slugify(category.title!)}`}
+                    href={`/blog/categories/${slugify(category.title!)}`}
                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
                     {category.title}
@@ -43,12 +43,12 @@ function CurrentPosts({ currentPosts }) {
                 ))}
               </div>
               <div className="group relative max-w-xl">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <Link href={`/blog/${post.slug}`}>
                     <span className="absolute inset-0" />
                     {post.title}
                   </Link>
-                </h3>
+                </h2>
                 <p className="mt-5 text-sm leading-6 text-gray-600 group-hover:text-gray-500">
                   {post.excerpt}
                 </p>
@@ -90,7 +90,7 @@ export function PaginatedPosts({ postsPerPage, posts }) {
         <ReactPaginate
           activeLinkClassName="bg-gray-100"
           pageLinkClassName="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          className="mx-auto   flex max-w-fit flex-1 items-center justify-between gap-4"
+          className="mx-auto flex max-w-fit flex-1 items-center justify-between gap-4"
           breakLabel="..."
           nextLabel={
             <div className="flex items-center text-sm">

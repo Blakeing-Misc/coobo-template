@@ -31,7 +31,7 @@ const SearchPage = () => {
   )
 
   if (!encodedSearchQuery) {
-    router.push("/")
+    router.push("/blog")
   }
 
   if (isLoading) {
@@ -41,7 +41,9 @@ const SearchPage = () => {
           <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl">
             Showing results for:
           </h1>
-          <p className=" text-lg text-accent-700 sm:text-xl">{searchQuery}</p>
+          <p className=" text-lg italic text-accent-700 sm:text-xl">
+            {searchQuery}
+          </p>
         </section>
         <Separator className="my-4 " />
         <div className="flex min-h-[25vh] items-center justify-center ">
@@ -76,7 +78,9 @@ const SearchPage = () => {
           <h1 className="text-3xl font-extrabold  leading-tight tracking-tighter sm:text-3xl">
             Showing results for:
           </h1>
-          <p className=" text-lg text-accent-700 sm:text-xl">{searchQuery}</p>
+          <p className="text-lg italic text-accent-700 sm:text-xl">
+            {searchQuery}
+          </p>
         </section>
         <Separator className="my-4 " />
         <div className="mt-10 ">
@@ -98,7 +102,9 @@ const SearchPage = () => {
         <h1 className="text-3xl font-extrabold  leading-tight tracking-tighter sm:text-3xl">
           Showing results for:
         </h1>
-        <p className=" text-lg text-accent-700 sm:text-xl">{searchQuery}</p>
+        <p className=" text-lg italic text-accent-700 sm:text-xl">
+          {searchQuery}
+        </p>
       </section>
       <Separator className="my-4 " />
       <div className="mt-10 space-y-20 lg:space-y-20">

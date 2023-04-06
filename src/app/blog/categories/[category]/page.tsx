@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound, usePathname } from "next/navigation"
 import { pick } from "@contentlayer/client"
 import { allPosts } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
 import { slugify } from "@/lib/slugify"
+import Breadcrumbs from "@/components/breadcrumbs"
 import { PaginatedPosts } from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 
@@ -110,6 +111,7 @@ export default async function CategoryPage({ params }) {
         <h1 className="text-3xl font-extrabold capitalize leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           {params.category}
         </h1>
+        {/* <Breadcrumbs /> */}
       </section>
       <Separator className="my-4 " />
       <div className="mt-10 space-y-20 lg:space-y-20">

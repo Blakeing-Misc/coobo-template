@@ -24,23 +24,23 @@ export const siteConfig: SiteConfig = {
   mainNav: [
     {
       title: "Typography",
-      href: "/typography",
+      slug: "/typography",
     },
     {
       title: "Components",
-      href: "/components",
+      slug: "/components",
     },
     {
       title: "Colors",
-      href: "/colors",
+      slug: "/colors",
     },
     {
       title: "Forms",
-      href: "/forms",
+      slug: "/forms",
     },
     {
       title: "Blog",
-      href: "/blog",
+      slug: "/blog",
     },
   ],
   links: {
