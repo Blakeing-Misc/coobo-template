@@ -6,10 +6,19 @@
   :root {
     --header-height: 0;
   }
-  /*1Password style override*/
+
+  /*Browsers default outline styles override*/
+
+  a:focus {
+    @apply outline-1 outline-current outline-offset-1;
+  }
+
+  /*1Password defualt styles override*/
+
   div input {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
   }
+
   .body p {
     @apply leading-7 text-base [&:not(:first-child)]:mt-4;
   }
@@ -26,8 +35,7 @@
     @apply pt-1 pb-2 text-2xl font-bold tracking-wide cursor-pointer mb-2;
   }
 
-  /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.).
-   A helpful addition for whenn page content is consumed from a source managed through a wysiwyg editor. */
+  /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.). A helpful addition for whenn page content is consumed from a source managed through a wysiwyg editor. */
 
   .body :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
     @apply mb-4;
