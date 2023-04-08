@@ -7,7 +7,7 @@ import { allPosts } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
 import { slugify } from "@/lib/slugify"
-import Breadcrumbs from "@/components/breadcrumbs"
+import Breadcrumbs from "@/components/ui/breadcrumbs"
 import { PaginatedPosts } from "@/components/pagination"
 import { Separator } from "@/components/ui/separator"
 
