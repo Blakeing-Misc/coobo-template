@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/forms"),
+    require("@headlessui/tailwindcss"),
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
   ],

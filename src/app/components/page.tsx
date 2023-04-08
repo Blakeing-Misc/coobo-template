@@ -16,7 +16,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Separator } from "@/components/ui/separator"
 import Table from "@/components/ui/table"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Tabs from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
 
 const faqs = [
@@ -159,7 +159,7 @@ function ComponentsPage() {
         <div className="body">
           <h2>Table</h2>
         </div>
-        <Table className="mt-10  " people={people} />
+        <Table className="mt-10" people={people} />
       </section>
       <section className="mt-10 space-y-10">
         <div className="body">
@@ -223,24 +223,7 @@ function ComponentsPage() {
         <div className="body">
           <h2>Tabs</h2>
         </div>
-        <Tabs defaultValue="account" className="w-[400px]">
-          <TabsList>
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
-          </TabsList>
-          <TabsContent value="account">
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Make changes to your account here. Click save when you&apos;re
-              done.
-            </p>
-          </TabsContent>
-          <TabsContent value="password">
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Change your password here. After saving, you&apos;ll be logged
-              out.
-            </p>
-          </TabsContent>
-        </Tabs>
+        <Tabs />
       </section>
 
       <section className="mt-10">

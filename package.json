@@ -16,6 +16,7 @@
   "dependencies": {
     "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.13",
+    "@headlessui/tailwindcss": "^0.1.2",
     "@heroicons/react": "^2.0.17",
     "@hookform/resolvers": "^3.0.0",
     "@radix-ui/react-accessible-icon": "^1.0.1",
