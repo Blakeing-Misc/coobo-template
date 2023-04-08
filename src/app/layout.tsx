@@ -4,7 +4,6 @@ import { Archivo, Roboto } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 
 import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
 import { Toaster } from "@/components/ui/toaster"
 
 const archivo = Archivo({
@@ -42,7 +41,6 @@ export default function RootLayout({
       lang="en"
     >
       <body className="min-h-screen bg-white  ">
-        {/* <SiteHeader /> */}
         {children}
         <Toaster />
         <Analytics />
