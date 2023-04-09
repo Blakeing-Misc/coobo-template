@@ -1,14 +1,12 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound, usePathname } from "next/navigation"
+import { notFound } from "next/navigation"
 import { pick } from "@contentlayer/client"
+import slugify from "@sindresorhus/slugify"
 import { allPosts } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
-import { slugify } from "@/lib/slugify"
-import Breadcrumbs from "@/components/ui/breadcrumbs"
 import { PaginatedPosts } from "@/components/pagination"
+import Breadcrumbs from "@/components/ui/breadcrumbs"
 import { Separator } from "@/components/ui/separator"
 
 export async function generateStaticParams() {
