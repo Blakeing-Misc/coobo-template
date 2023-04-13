@@ -1,3 +1,4 @@
+import Header from "@/components/header"
 import { SiteHeader } from "@/components/site-header"
 
 export default function ColorsLayout({
@@ -7,7 +8,7 @@ export default function ColorsLayout({
 }) {
   return (
     <main>
-      <SiteHeader position="sticky" />
+      <Header position="sticky" />
       {children}
     </main>
   )

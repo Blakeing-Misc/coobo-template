@@ -11,9 +11,10 @@ import { buttonVariants } from "@/components/ui/button"
 
 interface SiteHeaderProps {
   position?: "fixed" | "sticky" | "relative"
+  className?: string
 }
 
-export function SiteHeader({ position }: SiteHeaderProps) {
+export function SiteHeader({ position,className }: SiteHeaderProps) {
   useEffect(() => {
     const headerHeight = document.querySelector("header")!.offsetHeight
     document.documentElement.style.setProperty(
@@ -26,6 +27,7 @@ export function SiteHeader({ position }: SiteHeaderProps) {
     <header
       className={cn(
         position,
+        className,
         "top-0 z-40 w-full border-b border-b-accent-200 bg-white"
       )}
     >

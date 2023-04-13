@@ -1,3 +1,4 @@
+import Header from "@/components/header"
 import SearchInput from "@/components/search-input"
 import Sidebar from "@/components/sidebar"
 import { SiteHeader } from "@/components/site-header"
@@ -9,7 +10,7 @@ export default function BlogLayout({
 }) {
   return (
     <main>
-      <SiteHeader position="sticky" />
+      <Header position="sticky" />
 
       <div className="container mx-auto flex items-start gap-x-20 py-10 ">
         <main className="flex-1"> {children}</main>

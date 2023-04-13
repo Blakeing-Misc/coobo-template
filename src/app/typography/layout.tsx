@@ -1,3 +1,4 @@
+import Header from "@/components/header"
 import { SiteHeader } from "@/components/site-header"
 
 export default function FormsLayout({
@@ -7,7 +8,7 @@ export default function FormsLayout({
 }) {
   return (
     <main>
-      <SiteHeader position="sticky" />
+      <Header position="sticky" />
       {children}
     </main>
   )

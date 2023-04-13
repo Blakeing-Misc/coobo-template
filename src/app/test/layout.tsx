@@ -1,5 +1,4 @@
 import Header from "@/components/header"
-import { SiteHeader } from "@/components/site-header"
 
 export default function ComponentsLayout({
   children,
@@ -8,7 +7,7 @@ export default function ComponentsLayout({
 }) {
   return (
     <main>
-      <Header position="sticky" />
+      <Header />
       {children}
     </main>
   )

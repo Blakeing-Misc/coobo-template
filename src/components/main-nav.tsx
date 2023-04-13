@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname, useSelectedLayoutSegment } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 import { NavItem } from "@/types/nav"
 import { cn } from "@/lib/utils"
@@ -56,7 +56,6 @@ function GlobalNavItem({ item }: { item: NavItem }) {
 
   return (
     <Link
-      // href={`/${item.slug}`}
       href={item.slug!}
       className={cn(
         "flex items-center text-lg font-semibold sm:text-sm",
