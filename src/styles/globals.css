@@ -9,7 +9,8 @@
 
   /*Browsers default outline styles override*/
 
-  a:focus {
+  a,
+  button:focus {
     @apply outline-1 outline-current outline-offset-1;
   }
 

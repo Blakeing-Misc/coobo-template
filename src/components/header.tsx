@@ -23,6 +23,7 @@ import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { buttonVariants } from "./ui/button"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -81,7 +82,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
       className={cn(
         position,
         className,
-        "top-0 isolate z-40 w-full border-b border-b-accent-200 bg-white "
+        "top-0 isolate z-10 w-full border-b border-b-accent-200 bg-white "
       )}
     >
       <nav
@@ -90,7 +91,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <Icons.logo className="h-16 w-auto" />
+            <Icons.logo className="h-8 w-auto" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -176,9 +177,38 @@ export default function Header({ position, className }: SiteHeaderProps) {
           </Popover.Group>
         ) : null}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Link
+            href={siteConfig.links.facebook || "#"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+                className: "text-accent-700 ",
+              })}
+            >
+              <Icons.facebook className="h-5 w-5" />
+              <span className="sr-only">Facebook</span>
+            </div>
+          </Link>
+          <Link
+            href={siteConfig.links.linkedin || "#"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+                className: "text-accent-700 ",
+              })}
+            >
+              <Icons.linkedin className="h-5 w-5 " />
+              <span className="sr-only">LinkedIn</span>
+            </div>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -191,7 +221,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
         <Dialog.Panel className="container fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Icons.logo className="h-16 w-auto" />
+              <Icons.logo className="h-8 w-auto" />
             </Link>
             <button
               type="button"
