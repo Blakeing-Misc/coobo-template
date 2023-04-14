@@ -90,7 +90,11 @@ export default function Header({ position, className }: SiteHeaderProps) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <Link
+            href="/"
+            aria-label="Navigate to home."
+            className="-m-1.5 p-1.5"
+          >
             <Icons.logo className="h-8 w-auto" />
           </Link>
         </div>
