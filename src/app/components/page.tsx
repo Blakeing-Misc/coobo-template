@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2, Mail } from "lucide-react"
 
+import Map from "@/components/map"
 import Accordion from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Dropdown from "@/components/ui/dropdown"
@@ -166,6 +167,12 @@ function ComponentsPage() {
           <h2>Dropdown</h2>
         </div>
         <Dropdown />
+      </section>
+      <section className="mt-10 space-y-10">
+        <div className="body">
+          <h2>Map</h2>
+        </div>
+        <Map />
       </section>
 
       <section className="mt-10">

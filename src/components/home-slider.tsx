@@ -36,6 +36,7 @@ export default function HomeSlider() {
             slider.next()
           }, 5000)
         }
+
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
             mouseOver = true
