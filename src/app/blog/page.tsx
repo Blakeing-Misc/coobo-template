@@ -64,7 +64,7 @@ function BlogPage() {
           </a>{" "}
           package.
         </p>
-        <small className="italic text-gray-500">
+        <small className="italic text-accent-500">
           * This solution is meant to be used if client does not require a CMS
           yet would still like some sort of blog functionality we can update
           easily.

@@ -23,33 +23,33 @@ function CurrentPosts({ currentPosts }) {
                 src={post.image!}
                 fill
                 alt=""
-                className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+                className="absolute inset-0 h-full w-full rounded-2xl bg-accent-50 object-cover"
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-accent-900/10" />
             </div>
             <div>
               <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.publishedAt} className="text-gray-500">
+                <time dateTime={post.publishedAt} className="text-accent-500">
                   {post.publishedAt}
                 </time>
                 {post.categories?.map((category: { title }) => (
                   <Link
                     key={category.title}
                     href={`/blog/categories/${slugify(category.title!)}`}
-                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    className="relative z-10 rounded-full bg-accent-50 px-3 py-1.5 font-medium text-accent-600 hover:bg-accent-100"
                   >
                     {category.title}
                   </Link>
                 ))}
               </div>
               <div className="group relative max-w-xl">
-                <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h2 className="mt-3 text-lg font-semibold leading-6 text-accent-900 group-hover:text-accent-600">
                   <Link href={`/blog/${post.slug}`}>
                     <span className="absolute inset-0" />
                     {post.title}
                   </Link>
                 </h2>
-                <p className="mt-5 text-sm leading-6 text-gray-600 group-hover:text-gray-500">
+                <p className="mt-5 text-sm leading-6 text-accent-600 group-hover:text-accent-500">
                   {post.excerpt}
                 </p>
               </div>
@@ -88,14 +88,14 @@ export function PaginatedPosts({ postsPerPage, posts }) {
       <Separator className="my-4 " />
       {posts.length > postsPerPage ? (
         <ReactPaginate
-          activeLinkClassName="bg-gray-100"
-          pageLinkClassName="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+          activeLinkClassName="bg-accent-100"
+          pageLinkClassName="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-accent-900 ring-1 ring-inset ring-accent-300 hover:bg-accent-50 focus:z-20 focus:outline-offset-0"
           className="mx-auto flex max-w-fit flex-1 items-center justify-between gap-4"
           breakLabel="..."
           nextLabel={
             <div className="flex items-center text-sm">
               <span>Next</span>
-              <ArrowRight className="ml-2 h-5 w-5  text-gray-400" />
+              <ArrowRight className="ml-2 h-5 w-5  text-accent-400" />
             </div>
           }
           onPageChange={handlePageClick}
@@ -104,7 +104,7 @@ export function PaginatedPosts({ postsPerPage, posts }) {
           disabledClassName="invisible"
           previousLabel={
             <div className="flex items-center">
-              <ArrowLeft className="mr-2 h-5 w-5  text-gray-400" />
+              <ArrowLeft className="mr-2 h-5 w-5  text-accent-400" />
               <span className="text-sm">Previous</span>
             </div>
           }

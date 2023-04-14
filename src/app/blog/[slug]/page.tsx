@@ -82,7 +82,7 @@ export default async function Blog({ params }: BlogProps) {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           <Balancer>{post.title}</Balancer>
         </h1>
-        <small className="italic text-gray-500">{post.publishedAt}</small>
+        <small className="italic text-accent-500">{post.publishedAt}</small>
       </section>
       <Separator className="my-4" />
       <Mdx code={post.body.code} />

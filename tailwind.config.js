@@ -16,19 +16,22 @@ module.exports = {
     },
     extend: {
       colors: {
-        brand: {
-          50: "#FDEDE8",
-          100: "#FBDED5",
-          200: "#F9CBBD",
-          300: "#F7B9A6",
-          400: "#F6AA93",
-          500: "#F4987C",
-          600: "#F28564",
-          700: "#F07651",
-          800: "#EE643A",
-          900: "#EC5324",
-          950: "#7F260B",
-        },
+        // brand: {
+        //   50: "#FDEDE8",
+        //   100: "#FBDED5",
+        //   200: "#F7B9A6",
+        //   300: "#F4987C",
+        //   400: "#F07651",
+        //   500: "#EC5324",
+        //   600: "#CA3D12",
+        //   700: "#962D0D",
+        //   800: "#631E09",
+        //   900: "#340F04",
+        //   950: "#170702",
+        // },
+        primary: colors.indigo,
+
+        secondary: colors.orange,
         accent: colors.slate,
       },
       fontFamily: {

@@ -20,6 +20,12 @@ function ColorsPage() {
   const brandColors = Object.keys(themeColors).filter((name) =>
     name.startsWith("brand")
   )
+  const primaryColors = Object.keys(themeColors).filter((name) =>
+    name.startsWith("primary")
+  )
+  const secondaryColors = Object.keys(themeColors).filter((name) =>
+    name.startsWith("secondary")
+  )
   const accentColors = Object.keys(themeColors).filter((name) =>
     name.startsWith("accent")
   )
@@ -69,10 +75,10 @@ function ColorsPage() {
 
       <section>
         <div className="body">
-          <h2>Brand Pallete</h2>
+          <h2>Primary Pallete</h2>
         </div>
         <div className="mx-auto mt-3 grid grid-cols-3 gap-x-2 gap-y-3 sm:mt-2 sm:grid-cols-11 2xl:mt-0">
-          {brandColors.map((colorName) => {
+          {primaryColors.map((colorName) => {
             // Get the shade object for the current color
             const shades = themeColors[colorName]
 
@@ -128,7 +134,67 @@ function ColorsPage() {
           })}
         </div>
       </section>
+      <section className=" mt-10">
+        <div className="body">
+          <h2>Secondary Pallete</h2>
+        </div>
+        <div className="mx-auto mt-3 grid grid-cols-3 gap-x-2 gap-y-3 sm:mt-2 sm:grid-cols-11 2xl:mt-0">
+          {secondaryColors.map((colorName) => {
+            // Get the shade object for the current color
+            const shades = themeColors[colorName]
 
+            // Generate a JSX element for each shade of the current color
+            return Object.keys(shades).map((shadeName) => {
+              // Get the hex value for the current shade
+              const hexValue = shades[shadeName]
+
+              // Generate a unique key for this JSX element
+              const key = `${colorName}-${shadeName}`
+
+              // Generate a JSX element for the current shade
+              return (
+                <div className=" flex flex-col" key={key}>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => {
+                            try {
+                              copyToClipboard(hexValue)
+                              toast({
+                                title: "Copied to clipboard",
+                                description: `The color code ${hexValue} has been copied to your clipboard.`,
+                                duration: 3000,
+                              })
+                            } catch (err) {
+                              toast({
+                                title: "Uh oh! Something went wrong.",
+                                description:
+                                  "There was a problem with your request.",
+                                duration: 5000,
+                              })
+                            }
+                          }}
+                          className=" h-10 w-10 rounded  sm:w-full"
+                          style={{ backgroundColor: hexValue }}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs">Copy</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+
+                  <p className="mt-1 text-sm text-accent-900">{key}</p>
+                  <p className="text-xs lowercase text-accent-500">
+                    {hexValue}
+                  </p>
+                </div>
+              )
+            })
+          })}
+        </div>
+      </section>
       <section className=" mt-10">
         <div className="body">
           <h2>Accent Pallete</h2>
@@ -183,66 +249,6 @@ function ColorsPage() {
                   <p className="text-xs lowercase text-accent-500">
                     {hexValue}
                   </p>
-                </div>
-              )
-            })
-          })}
-        </div>
-      </section>
-
-      <section className=" mt-10">
-        <div className="body">
-          <h2>Tailwind Pallete</h2>
-        </div>
-        <div className="mx-auto mt-3 grid grid-cols-3 gap-x-2 gap-y-3 sm:mt-2 sm:grid-cols-11 2xl:mt-0">
-          {/* Map over the color names and generate a JSX element for each color */}
-          {tailwindColors.map((colorName) => {
-            // Get the shade object for the current color
-            const shades = colors[colorName]
-
-            // Generate a JSX element for each shade of the current color
-            return Object.keys(shades).map((shadeName) => {
-              // Get the hex value for the current shade
-              const hexValue = shades[shadeName]
-
-              // Generate a unique key for this JSX element
-              const key = `${colorName}-${shadeName}`
-
-              // Generate a JSX element for the current shade
-              return (
-                <div className="flex flex-col " key={key}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <button
-                          onClick={() => {
-                            try {
-                              copyToClipboard(hexValue)
-                              toast({
-                                title: "Copied to clipboard",
-                                description: `The color code ${hexValue} has been copied to your clipboard.`,
-                                duration: 3000,
-                              })
-                            } catch (err) {
-                              toast({
-                                title: "Uh oh! Something went wrong.",
-                                description:
-                                  "There was a problem with your request.",
-                                duration: 5000,
-                              })
-                            }
-                          }}
-                          className=" h-10 w-10 rounded  sm:w-full"
-                          style={{ backgroundColor: hexValue }}
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p className="text-xs">Copy</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                  <p className="mt-1 text-sm text-accent-900">{key}</p>
-                  <p className="text-xs text-accent-500">{hexValue}</p>
                 </div>
               )
             })

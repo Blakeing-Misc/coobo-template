@@ -50,7 +50,7 @@ const SearchPage = () => {
           <div role="status">
             <svg
               aria-hidden="true"
-              className={`h-12 w-12 animate-spin fill-gray-300 text-gray-700`}
+              className={`h-12 w-12 animate-spin fill-accent-300 text-accent-700`}
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -84,10 +84,10 @@ const SearchPage = () => {
         </section>
         <Separator className="my-4 " />
         <div className="mt-10 ">
-          <h2 className="s mt-4 text-2xl font-bold tracking-tight text-gray-900">
+          <h2 className="s mt-4 text-2xl font-bold tracking-tight text-accent-900">
             Sorry
           </h2>
-          <p className="mt-6 text-base leading-7 text-gray-600">
+          <p className="mt-6 text-base leading-7 text-accent-600">
             We couldn&rsquo;t find any results matching the search term you
             provided.
           </p>

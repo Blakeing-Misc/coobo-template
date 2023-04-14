@@ -18,7 +18,7 @@ export default function Example() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="bg-opacity/75 fixed inset-0 bg-gray-500 transition-opacity" />
+          <div className="bg-opacity/75 fixed inset-0 bg-accent-500 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -43,12 +43,12 @@ export default function Example() {
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
                       as="h3"
-                      className="text-base font-semibold leading-6 text-gray-900"
+                      className="text-base font-semibold leading-6 text-accent-900"
                     >
                       Payment successful
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-accent-500">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Consequatur amet labore.
                       </p>

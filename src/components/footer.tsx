@@ -106,7 +106,7 @@ export default function Footer() {
             <Link href="/" className="">
               <Icons.logo className="h-8 w-auto" />
             </Link>
-            <p className="text-sm leading-6 text-gray-600">
+            <p className="text-sm leading-6 text-accent-600">
               Making the world a better place through constructing elegant
               hierarchies.
             </p>
@@ -115,7 +115,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-gray-500"
+                  className="text-accent-400 hover:text-accent-500"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -126,7 +126,7 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                <h3 className="text-sm font-semibold leading-6 text-accent-900">
                   Solutions
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -134,7 +134,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-sm leading-6 text-accent-600 hover:text-accent-900"
                       >
                         {item.name}
                       </a>
@@ -143,7 +143,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                <h3 className="text-sm font-semibold leading-6 text-accent-900">
                   Support
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -151,7 +151,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-sm leading-6 text-accent-600 hover:text-accent-900"
                       >
                         {item.name}
                       </a>
@@ -162,7 +162,7 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                <h3 className="text-sm font-semibold leading-6 text-accent-900">
                   Company
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -170,7 +170,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-sm leading-6 text-accent-600 hover:text-accent-900"
                       >
                         {item.name}
                       </a>
@@ -179,7 +179,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                <h3 className="text-sm font-semibold leading-6 text-accent-900">
                   Legal
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -187,7 +187,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-sm leading-6 text-accent-600 hover:text-accent-900"
                       >
                         {item.name}
                       </a>
@@ -198,8 +198,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-500">
+        <div className="mt-16 border-t border-accent-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-accent-500">
             &copy; 2020 Your Company, Inc. All rights reserved.
           </p>
         </div>

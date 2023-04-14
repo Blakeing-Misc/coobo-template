@@ -15,7 +15,7 @@ function TypographyPage() {
         <p className="text-lg text-accent-700 sm:text-xl">
           Custom styles for headings, paragraphs, lists, fonts, etc.{" "}
         </p>
-        <small className="italic text-gray-500">
+        <small className="italic text-accent-500">
           * Update/optimize font familes by referencing this{" "}
           <a
             target="_blank"
@@ -26,12 +26,12 @@ function TypographyPage() {
           </a>
           .
         </small>
-        <small className="italic text-gray-500">
+        <small className="italic text-accent-500">
           * To utlize these typography styles each element must be a child of
           the body class. This can be edited in the global.css file within the
           styles folder.
         </small>
-        <small className="italic text-gray-500">
+        <small className="italic text-accent-500">
           * Should be noted that Tailwind has a{" "}
           <a
             target="_blank"
@@ -61,13 +61,13 @@ function TypographyPage() {
       </section>
       <div className="flex gap-4 ">
         <a
-          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
+          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2   "
           href="#section1"
         >
           Anchor Tag to H3
         </a>
         <a
-          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
+          className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-secondary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2   "
           href="#section2"
         >
           Anchor Tag to H6

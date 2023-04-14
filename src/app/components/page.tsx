@@ -113,9 +113,14 @@ function ComponentsPage() {
           <h2>Buttons</h2>
         </div>
         <div className="mt-10 flex flex-col gap-4 lg:flex-row">
+          <Button className="max-w-fit">Button</Button>
+          <Button className="max-w-fit" variant="secondary">
+            Secondary
+          </Button>
           <Button className="max-w-fit">
             <Mail className="mr-2 h-4 w-4" /> Button with Icon
           </Button>
+
           <Button className="max-w-fit" variant="link">
             Link
           </Button>
@@ -135,7 +140,6 @@ function ComponentsPage() {
           <Button className="max-w-fit" variant="destructive">
             Destructive
           </Button>
-          <Button className="max-w-fit">Button</Button>
         </div>
       </section>
 
