@@ -77,7 +77,13 @@ export default function Header({ position, className }: SiteHeaderProps) {
   }, [])
 
   return (
-    <header className={cn(position, className, "isolate z-10 w-full bg-white")}>
+    <header
+      className={cn(
+        position,
+        className,
+        "top-0 isolate z-40 w-full border-b border-b-accent-200 bg-white "
+      )}
+    >
       <nav
         className="container mx-auto flex items-center justify-between py-6 "
         aria-label="Global"
@@ -99,9 +105,13 @@ export default function Header({ position, className }: SiteHeaderProps) {
         </div>
         {siteConfig.mainNav?.length ? (
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
+            {siteConfig.mainNav?.map(
+              (item, index) =>
+                item.slug && <GlobalNavItem key={index} item={item} />
+            )}
             <Popover>
               <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-600 hover:text-gray-900">
-                Product
+                Mega
                 <ChevronDownIcon
                   className="h-5 w-5 flex-none text-gray-400"
                   aria-hidden="true"
@@ -163,11 +173,6 @@ export default function Header({ position, className }: SiteHeaderProps) {
                 </Popover.Panel>
               </Transition>
             </Popover>
-
-            {siteConfig.mainNav?.map(
-              (item, index) =>
-                item.slug && <GlobalNavItem key={index} item={item} />
-            )}
           </Popover.Group>
         ) : null}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
