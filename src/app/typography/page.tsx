@@ -59,7 +59,6 @@ function TypographyPage() {
           to see it in action.
         </small>
       </section>
-      <Separator className="my-4 " />
       <div className="flex gap-4 ">
         <a
           className="mt-4 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2   "
@@ -74,6 +73,7 @@ function TypographyPage() {
           Anchor Tag to H6
         </a>
       </div>
+      <Separator className="my-4 " />
 
       <section className="body min-h-[300vh] max-w-prose">
         <h1>Heading 1</h1>

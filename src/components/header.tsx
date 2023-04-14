@@ -82,7 +82,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
       className={cn(
         position,
         className,
-        "top-0 isolate z-10 w-full border-b border-b-accent-200 bg-white "
+        "top-0 isolate z-20 w-full border-b border-b-accent-200 bg-white "
       )}
     >
       <nav
@@ -128,7 +128,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 -translate-y-1"
               >
-                <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5">
+                <Popover.Panel className="absolute inset-x-0 top-0 -z-20 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5">
                   <div className="container mx-auto grid grid-cols-4 gap-x-4  py-10  xl:gap-x-8">
                     {products.map((item) => (
                       <div
@@ -217,8 +217,8 @@ export default function Header({ position, className }: SiteHeaderProps) {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="container fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-20" />
+        <Dialog.Panel className="container fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <Icons.logo className="h-8 w-auto" />
