@@ -2,7 +2,7 @@ import { SVGProps } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import logoIcon from "../../public/logo-icon.png"
+import { Icons } from "@/components/icons"
 
 const navigation = {
   solutions: [
@@ -104,7 +104,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="">
-              <Image alt="Coobo Media" src={logoIcon} className="h-7 w-auto" />
+              <Icons.logo className="h-8 w-auto" />
             </Link>
             <p className="text-sm leading-6 text-gray-600">
               Making the world a better place through constructing elegant
