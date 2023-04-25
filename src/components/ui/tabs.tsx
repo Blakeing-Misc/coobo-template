@@ -1,6 +1,7 @@
 "use client"
 
 import { Tab } from "@headlessui/react"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -46,18 +47,52 @@ export default function Tabs() {
               <span>{tab.name}</span>
               <span
                 aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-0.5 ui-selected:bg-primary-500 ui-not-selected:bg-transparent"
+                className="test absolute inset-x-0 bottom-0 h-0.5 ui-selected:bg-primary-500 ui-not-selected:bg-transparent"
               />
             </Tab>
           ))}
         </Tab.List>
       </div>
-      <Tab.Panels className="mt-10">
-        <Tab.Panel>Content 1</Tab.Panel>
-        <Tab.Panel>Content 2</Tab.Panel>
-        <Tab.Panel>Content 3</Tab.Panel>
-        <Tab.Panel>Content 4</Tab.Panel>
-      </Tab.Panels>
+      <AnimatePresence mode="wait">
+        <Tab.Panels className="mt-10">
+          <Tab.Panel
+            as={motion.div}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            Content 1
+          </Tab.Panel>
+          <Tab.Panel
+            as={motion.div}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            Content 2
+          </Tab.Panel>
+          <Tab.Panel
+            as={motion.div}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            Content 3
+          </Tab.Panel>
+          <Tab.Panel
+            as={motion.div}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            Content 4
+          </Tab.Panel>
+        </Tab.Panels>
+      </AnimatePresence>
     </Tab.Group>
   )
 }

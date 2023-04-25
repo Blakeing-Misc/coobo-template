@@ -1,5 +1,6 @@
 "use client"
 
+import { Fragment, useState } from "react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2, Mail } from "lucide-react"
@@ -9,6 +10,7 @@ import Accordion from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Dropdown from "@/components/ui/dropdown"
 import { Separator } from "@/components/ui/separator"
+import SlideOver from "@/components/ui/slide-over"
 import Table from "@/components/ui/table"
 import Tabs from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
@@ -95,6 +97,9 @@ const people = [
 
 function ComponentsPage() {
   const { toast } = useToast()
+
+  const [open, setOpen] = useState(false)
+
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
       <section className="flex flex-col items-start gap-2">
@@ -178,7 +183,6 @@ function ComponentsPage() {
         </div>
         <Map />
       </section>
-
       <section className="mt-10">
         <div className="body">
           <h2>Toast</h2>
@@ -196,6 +200,20 @@ function ComponentsPage() {
         >
           Show Toast
         </Button>
+      </section>
+
+      <section className="mt-10">
+        <div className="body">
+          <h2>Slide Over</h2>
+        </div>
+        <Button
+          className="mt-10"
+          variant="outline"
+          onClick={() => setOpen(true)}
+        >
+          Show Slide Over
+        </Button>
+        <SlideOver open={open} setOpen={setOpen} onClose={() => setOpen(false)} />
       </section>
     </div>
   )
