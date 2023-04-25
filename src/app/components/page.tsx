@@ -9,6 +9,7 @@ import Map from "@/components/map"
 import Accordion from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Dropdown from "@/components/ui/dropdown"
+import FramerAccordion from "@/components/ui/framer-accordion"
 import { Separator } from "@/components/ui/separator"
 import SlideOver from "@/components/ui/slide-over"
 import Table from "@/components/ui/table"
@@ -99,6 +100,7 @@ function ComponentsPage() {
   const { toast } = useToast()
 
   const [open, setOpen] = useState(false)
+  const [expanded, setExpanded] = useState<false | number>(0)
 
   return (
     <div className="container mx-auto grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -158,6 +160,7 @@ function ComponentsPage() {
           faqs={faqs}
         />
       </section>
+  
       <section className=" mt-10">
         <div className="body">
           <h2>Table</h2>
@@ -213,7 +216,11 @@ function ComponentsPage() {
         >
           Show Slide Over
         </Button>
-        <SlideOver open={open} setOpen={setOpen} onClose={() => setOpen(false)} />
+        <SlideOver
+          open={open}
+          setOpen={setOpen}
+          onClose={() => setOpen(false)}
+        />
       </section>
     </div>
   )

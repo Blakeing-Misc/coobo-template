@@ -1,7 +1,8 @@
 "use client"
 
-import { Disclosure } from "@headlessui/react"
+import { Disclosure, Transition } from "@headlessui/react"
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -44,11 +45,31 @@ export default function Accordion({ className, faqs, title }: Props) {
                     </span>
                   </Disclosure.Button>
                 </dt>
-                <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                  <p className="text-base leading-7 text-accent-600">
-                    {faq.answer}
-                  </p>
-                </Disclosure.Panel>
+
+                <AnimatePresence initial={false}>
+                  {open && (
+                    <motion.dd
+                      className="overflow-hidden"
+                      initial="collapsed"
+                      animate="open"
+                      exit="collapsed"
+                      variants={{
+                        open: { opacity: 1, height: "auto" },
+                        collapsed: { opacity: 0, height: 0 },
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.04, 0.62, 0.23, 0.98],
+                      }}
+                    >
+                      <Disclosure.Panel static className="mt-2 pr-12">
+                        <p className="text-base leading-7 text-accent-600">
+                          {faq.answer}
+                        </p>
+                      </Disclosure.Panel>
+                    </motion.dd>
+                  )}
+                </AnimatePresence>
               </>
             )}
           </Disclosure>
