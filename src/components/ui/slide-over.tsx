@@ -15,7 +15,7 @@ export default function SlideOver({ open, onClose, setOpen }) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-500/75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -52,7 +52,7 @@ export default function SlideOver({ open, onClose, setOpen }) {
                       </div>
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      {/* Your content */}
+                      <p>Your Content</p>
                     </div>
                   </div>
                 </Dialog.Panel>

@@ -49,7 +49,6 @@ function FormsPage() {
 
   const {
     register,
-
     handleSubmit: handleFormSubmit,
     reset,
     watch,
@@ -144,21 +143,6 @@ function FormsPage() {
           className="max-w-xs space-y-10"
           onSubmit={handleFormSubmit(onSubmit)}
         >
-          {/* <div className="grid w-full  items-center gap-1.5">
-            <Label htmlFor="email">Email*</Label>
-            <Input
-              id="email"
-              aria-invalid={errors.email ? "true" : "false"}
-              {...register("email")}
-              type="email"
-              name="email"
-            />
-            {errors.email && (
-              <p role="alert" className="text-sm text-red-500">
-                {errors.email?.message}
-              </p>
-            )}
-          </div> */}
           <div>
             <label
               htmlFor="email"
@@ -174,7 +158,7 @@ function FormsPage() {
                 className={cn(
                   "block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset  focus:ring-inset  sm:text-sm sm:leading-6",
                   {
-                    "text-accent-900  ring-accent-300 placeholder:text-accent-400 focus:ring-2  focus:ring-accent-600 ":
+                    "text-accent-900  ring-accent-300 placeholder:text-accent-400 focus:ring-2  focus:ring-primary-600 ":
                       !errors["email"],
                     "focus:ring-red-500 text-red-900 ring-red-300 placeholder:text-red-300 ":
                       errors["email"],
@@ -218,7 +202,7 @@ function FormsPage() {
                 rows={4}
                 name="message"
                 id="message"
-                className="block w-full rounded-md border-0 text-accent-900 shadow-sm ring-1 ring-inset ring-accent-300 placeholder:text-accent-400 focus:ring-2 focus:ring-inset focus:ring-accent-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 text-accent-900 shadow-sm ring-1 ring-inset ring-accent-300 placeholder:text-accent-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:py-1.5 sm:text-sm sm:leading-6"
                 defaultValue={""}
               />
               {errors.message && (
@@ -239,7 +223,7 @@ function FormsPage() {
             <select
               id="location"
               {...register("location")}
-              className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-accent-900 ring-1 ring-inset ring-accent-300 focus:ring-2 focus:ring-accent-600 sm:text-sm sm:leading-6"
+              className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-accent-900 ring-1 ring-inset ring-accent-300 focus:ring-2 focus:ring-primary-600 sm:text-sm sm:leading-6"
               defaultValue="United States"
             >
               <option>United States</option>
@@ -270,7 +254,7 @@ function FormsPage() {
                     <div className="ml-3 flex h-6 items-center">
                       <input
                         {...register("fruits")}
-                        className="h-4 w-4 rounded border-accent-300 text-accent-600 focus:ring-accent-600"
+                        className="h-4 w-4 rounded border-accent-300 text-primary-600 focus:ring-primary-600"
                         aria-invalid={errors["fruits"] ? "true" : "false"}
                         value={value}
                         type="checkbox"
@@ -300,7 +284,7 @@ function FormsPage() {
                         value={value}
                         type="radio"
                         defaultChecked={value === "email"}
-                        className="h-4 w-4 border-accent-300 text-accent-600 focus:ring-accent-600"
+                        className="h-4 w-4 border-accent-300 text-primary-600 focus:ring-primary-600"
                       />
                       <label
                         htmlFor={label}

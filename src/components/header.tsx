@@ -116,7 +116,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
             )}
             <Popover>
               <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-accent-600 hover:text-accent-900">
-                Mega
+                Mega Menu
                 <ChevronDownIcon
                   className="h-5 w-5 flex-none text-accent-400"
                   aria-hidden="true"
