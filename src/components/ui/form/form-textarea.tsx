@@ -42,20 +42,27 @@ export const FormTextarea = <TFormValues extends Record<string, any>>({
 
   return (
     <div className={className}>
-      <textarea
-        id={id}
-        name={name}
-        aria-label={label}
-        aria-invalid={!!(errors && errorMessages)}
-        className={cn(
-          "relative block w-full resize-none appearance-none overflow-auto rounded border border-gray-300 bg-gray-50 p-3 text-base leading-none text-gray-700 transition-colors ease-in-out placeholder:text-gray-500 hover:border-blue-400 focus:border-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-400/30 ",
-          hasError
-            ? "border-red-600 hover:border-red-600 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/50"
-            : ""
-        )}
-        {...props}
-        {...(register && register(name, rules))}
-      />
+      <label
+        htmlFor={id}
+        className="block text-sm font-medium leading-6 text-accent-900"
+      >
+        {label}
+      </label>
+      <div className="mt-2">
+        <textarea
+          id={id}
+          name={name}
+          aria-invalid={!!(errors && errorMessages)}
+          className={cn(
+            "block w-full rounded-md border-0 text-accent-900 shadow-sm ring-1 ring-inset ring-accent-300 transition-colors placeholder:text-accent-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:py-1.5 sm:text-sm sm:leading-6",
+            hasError
+              ? "  text-red-900   ring-red-300 placeholder:text-red-300  focus:ring-red-500 "
+              : ""
+          )}
+          {...props}
+          {...(register && register(name, rules))}
+        />
+      </div>
       <ErrorMessage
         errors={errors}
         name={name as any}

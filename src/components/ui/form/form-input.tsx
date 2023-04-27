@@ -38,7 +38,7 @@ export const FormInput = <TFormValues extends Record<string, unknown>>({
         name={name}
         aria-invalid={hasError}
         className={cn({
-          "transition-colors focus:ring-red-500 text-red-900 ring-red-300 placeholder:text-red-300":
+          "transition-colors text-red-900   ring-red-300 placeholder:text-red-300  focus:ring-red-500 ":
             hasError,
         })}
         {...props}

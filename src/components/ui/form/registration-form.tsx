@@ -1,10 +1,12 @@
 "use client"
 
 import { FC } from "react"
+import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 
 import { FormInput } from "@/components/ui/form/form-input"
 import { FormTextarea } from "@/components/ui/form/form-textarea"
+import { Button } from "../button"
 
 export type RegistrationFormFields = {
   firstName: string
@@ -23,13 +25,20 @@ export const RegistrationForm: FC = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<RegistrationFormFields>()
 
   const watchAllFields = watch()
 
   const onSubmit = handleSubmit((data) => {
-    console.log("submitting...", data)
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve()
+        console.log(data)
+        reset()
+      }, 2000)
+    })
   })
 
   return (
@@ -85,12 +94,16 @@ export const RegistrationForm: FC = () => {
           errors={errors}
         />
 
-        <button
-          className="mt-4 rounded bg-blue-600 px-4 py-2 font-semibold text-white shadow-md duration-200 hover:-translate-y-1 hover:bg-blue-500 focus:translate-y-1 focus:outline-none disabled:opacity-50"
-          type="submit"
-        >
-          Submit
-        </button>
+        <Button className="mt-4" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin text-white" />
+              {"Submitting"}
+            </>
+          ) : (
+            "Submit"
+          )}
+        </Button>
       </form>
       <pre className="mt-10">{JSON.stringify(watchAllFields, null, 4)}</pre>
     </>
