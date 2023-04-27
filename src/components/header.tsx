@@ -1,6 +1,7 @@
 "use client"
 
 import { Fragment, useEffect, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react"
@@ -39,11 +40,77 @@ interface MainNavProps {
 }
 
 const engagement = [
-  { name: "About", href: "#", icon: InformationCircleIcon },
-  { name: "Customers", href: "#", icon: UsersIcon },
-  { name: "Press", href: "#", icon: NewspaperIcon },
-  { name: "Careers", href: "#", icon: BriefcaseIcon },
-  { name: "Privacy", href: "#", icon: ShieldCheckIcon },
+  {
+    id: "1",
+    name: "About",
+    href: "#",
+    icon: InformationCircleIcon,
+    title: "Boost your conversion rate",
+    date: "Mar 16, 2023",
+    datetime: "2023-03-16",
+    category: { title: "Marketing", href: "#" },
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    description:
+      "Et et dolore officia quis nostrud esse aute cillum irure do esse. Eiusmod ad deserunt cupidatat est magna Lorem.",
+  },
+  {
+    id: "2",
+    title: "How to use search engine optimization to drive sales",
+    name: "Customers",
+    href: "#",
+    icon: UsersIcon,
+    date: "Mar 10, 2023",
+    datetime: "2023-03-10",
+    category: { title: "Customers", href: "#" },
+    imageUrl:
+      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
+    description:
+      "Optio cum necessitatibus dolor voluptatum provident commodi et.",
+  },
+  {
+    id: "3",
+    title:
+      "Eget velit aliquet sagittis id consectetur. Vitae semper quis lectus nulla at volutpat diam ut.",
+    name: "Press",
+    href: "#",
+    icon: NewspaperIcon,
+    date: "Aug 27, 2023",
+    datetime: "2023-08-27",
+    category: { title: "Press", href: "#" },
+    imageUrl: "https://source.unsplash.com/random/?press",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: "4",
+    title: "In massa tempor nec feugiat nisl pretium fusce id velit.",
+    name: "Careers",
+    href: "#",
+    icon: BriefcaseIcon,
+    date: "April 9, 2023",
+    datetime: "2023-04-9",
+    category: { title: "Careers", href: "#" },
+    imageUrl: "https://source.unsplash.com/random/?careers",
+    description:
+      "Vulputate enim nulla aliquet porttitor lacus luctus accumsan. Euismod elementum nisi quis eleifend quam adipiscing.",
+  },
+  {
+    id: "5",
+    title: "Ac odio tempor orci dapibus ultrices in iaculis.",
+    name: "Privacy",
+    href: "#",
+    icon: ShieldCheckIcon,
+    date: "April 27, 2023",
+    datetime: "2023-04-27",
+    category: { title: "Privacy", href: "#" },
+    imageUrl: "https://source.unsplash.com/random/?privacy",
+    description:
+      "Nisl rhoncus mattis rhoncus urna neque. Sed enim ut sem viverra.",
+  },
+  // { id: "3", name: "Press", href: "#", icon: NewspaperIcon },
+  // { id: "4", name: "Careers", href: "#", icon: BriefcaseIcon },
+  // { id: "5", name: "Privacy", href: "#", icon: ShieldCheckIcon },
 ]
 const resources = [
   { name: "Community", href: "#", icon: UserGroupIcon },
@@ -115,137 +182,26 @@ interface SiteHeaderProps {
   className?: string
 }
 
-const navigation = {
-  categories: [
-    {
-      id: "women",
-      name: "Women",
-      featured: [
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-          imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
-        },
-        {
-          name: "Basic Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-          imageAlt:
-            "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
-        },
-      ],
-      sections: [
-        {
-          id: "clothing",
-          name: "Clothing",
-          items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Denim", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
-        },
-        {
-          id: "accessories",
-          name: "Accessories",
-          items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
-          ],
-        },
-        {
-          id: "brands",
-          name: "Brands",
-          items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Significant Other", href: "#" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "men",
-      name: "Men",
-      featured: [
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
-          imageAlt:
-            "Drawstring top with elastic loop closure and textured interior padding.",
-        },
-        {
-          name: "Artwork Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
-          imageAlt:
-            "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.",
-        },
-      ],
-      sections: [
-        {
-          id: "clothing",
-          name: "Clothing",
-          items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
-        },
-        {
-          id: "accessories",
-          name: "Accessories",
-          items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
-          ],
-        },
-        {
-          id: "brands",
-          name: "Brands",
-          items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-          ],
-        },
-      ],
-    },
-  ],
-  pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
-  ],
-}
+const placeholderImage =
+  "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
 
 export default function Header({ position, className }: SiteHeaderProps) {
+  const [hoveredItemId, setHoveredItemId] = useState(null)
+  const hoveredItem = engagement.find((item) => item.id === hoveredItemId)
+  const [lastHoveredItemId, setLastHoveredItemId] = useState(null)
+  const lastHoveredItem = engagement.find(
+    (item) => item.id === lastHoveredItemId
+  )
+
+  const handleMouseEnter = (itemId) => {
+    setHoveredItemId(itemId)
+  }
+
+  const handleMouseLeave = (itemId) => {
+    setHoveredItemId(null)
+    setLastHoveredItemId(itemId)
+  }
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   useEffect(() => {
     const headerHeight = document.querySelector("header")!.offsetHeight
@@ -388,9 +344,11 @@ export default function Header({ position, className }: SiteHeaderProps) {
                           <div className="-my-2">
                             {engagement.map((item) => (
                               <a
-                                key={item.name}
+                                key={item.id}
                                 href={item.href}
-                                className="flex gap-x-4 py-2 text-sm font-semibold leading-6 text-gray-900 hover:text-gray-900/20"
+                                onMouseEnter={() => handleMouseEnter(item.id)}
+                                onMouseLeave={() => handleMouseLeave(item.id)}
+                                className=" flex cursor-pointer gap-x-4 py-2 text-sm font-semibold leading-6 text-gray-900 hover:text-gray-900/20"
                               >
                                 <item.icon
                                   className="h-6 w-6 flex-none text-gray-400"
@@ -425,22 +383,122 @@ export default function Header({ position, className }: SiteHeaderProps) {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-10 sm:gap-8 lg:grid-cols-2">
+
+                    <div className="grid grid-cols-1 gap-10 sm:gap-8 ">
                       <h3 className="sr-only">Recent posts</h3>
-                      {recentPosts.map((post) => (
+                      {engagement.slice(0, 1).map((post) => (
                         <article
                           key={post.id}
                           className="relative isolate flex max-w-2xl flex-col gap-x-8 gap-y-6 sm:flex-row sm:items-start lg:flex-col lg:items-stretch"
                         >
                           <div className="relative flex-none">
-                            <img
-                              className="aspect-[2/1] w-full rounded-lg bg-gray-100 object-cover sm:aspect-[16/9] sm:h-32 lg:h-auto"
-                              src={post.imageUrl}
-                              alt=""
-                            />
+                            <div className="aspect-[2/1] w-full   sm:aspect-[16/9] sm:h-32 lg:h-auto">
+                              {hoveredItem ? (
+                                <Image
+                                  className="rounded-lg bg-gray-100 object-cover "
+                                  src={hoveredItem.imageUrl}
+                                  fill
+                                  alt={hoveredItem.title}
+                                />
+                              ) : lastHoveredItem ? (
+                                <Image
+                                  className="rounded-lg bg-gray-100 object-cover "
+                                  src={lastHoveredItem.imageUrl}
+                                  fill
+                                  alt={lastHoveredItem.title}
+                                />
+                              ) : (
+                                <Image
+                                  className="rounded-lg bg-gray-100 object-cover "
+                                  src={placeholderImage}
+                                  fill
+                                  alt="Placeholder"
+                                />
+                              )}
+                            </div>
                             <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
                           </div>
-                          <div>
+                          {hoveredItem ? (
+                            <div>
+                              <div className="flex items-center gap-x-4">
+                                <time
+                                  dateTime={hoveredItem.datetime}
+                                  className="text-sm leading-6 text-gray-600"
+                                >
+                                  {hoveredItem.date}
+                                </time>
+                                <a
+                                  href={hoveredItem.category?.href}
+                                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
+                                >
+                                  {hoveredItem.category?.title}
+                                </a>
+                              </div>
+                              <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
+                                <a href={hoveredItem.href}>
+                                  <span className="absolute inset-0" />
+                                  {hoveredItem.title}
+                                </a>
+                              </h4>
+                              <p className="mt-2 line-clamp-1 text-sm leading-6 text-gray-600">
+                                {hoveredItem.description}
+                              </p>
+                            </div>
+                          ) : lastHoveredItem ? (
+                            <div>
+                              <div className="flex items-center gap-x-4">
+                                <time
+                                  dateTime={lastHoveredItem.datetime}
+                                  className="text-sm leading-6 text-gray-600"
+                                >
+                                  {lastHoveredItem.date}
+                                </time>
+                                <a
+                                  href={lastHoveredItem.category?.href}
+                                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
+                                >
+                                  {lastHoveredItem.category?.title}
+                                </a>
+                              </div>
+                              <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
+                                <a href={lastHoveredItem.href}>
+                                  <span className="absolute inset-0" />
+                                  {lastHoveredItem.title}
+                                </a>
+                              </h4>
+                              <p className="mt-2 line-clamp-1 text-sm leading-6 text-gray-600">
+                                {lastHoveredItem.description}
+                              </p>
+                            </div>
+                          ) : (
+                            <div>
+                              <div className="flex items-center gap-x-4">
+                                <time
+                                  dateTime={engagement[0].datetime}
+                                  className="text-sm leading-6 text-gray-600"
+                                >
+                                  {engagement[0].date}
+                                </time>
+                                <a
+                                  href={engagement[0].category?.href}
+                                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
+                                >
+                                  {engagement[0].category?.title}
+                                </a>
+                              </div>
+                              <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
+                                <a href={engagement[0].href}>
+                                  <span className="absolute inset-0" />
+                                  {engagement[0].title}
+                                </a>
+                              </h4>
+                              <p className="mt-2 line-clamp-1 text-sm leading-6 text-gray-600">
+                                {engagement[0].description}
+                              </p>
+                            </div>
+                          )}
+                          {/* <div>
+
                             <div className="flex items-center gap-x-4">
                               <time
                                 dateTime={post.datetime}
@@ -449,10 +507,10 @@ export default function Header({ position, className }: SiteHeaderProps) {
                                 {post.date}
                               </time>
                               <a
-                                href={post.category.href}
+                                href={post.category?.href}
                                 className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
                               >
-                                {post.category.title}
+                                {post.category?.title}
                               </a>
                             </div>
                             <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
@@ -461,10 +519,10 @@ export default function Header({ position, className }: SiteHeaderProps) {
                                 {post.title}
                               </a>
                             </h4>
-                            <p className="mt-2 text-sm leading-6 text-gray-600">
+                            <p className="mt-2 text-sm leading-6 text-gray-600 line-clamp-1">
                               {post.description}
                             </p>
-                          </div>
+                          </div> */}
                         </article>
                       ))}
                     </div>
