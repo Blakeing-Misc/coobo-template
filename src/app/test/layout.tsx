@@ -8,6 +8,7 @@ export default function ComponentsLayout({
   return (
     <main>
       <Header position="sticky" />
+
       {children}
     </main>
   )
