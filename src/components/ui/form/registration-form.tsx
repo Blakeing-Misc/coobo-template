@@ -37,7 +37,7 @@ export const RegistrationForm: FC = () => {
         resolve()
         console.log(data)
         reset()
-      }, 2000)
+      }, 5000)
     })
   })
 
