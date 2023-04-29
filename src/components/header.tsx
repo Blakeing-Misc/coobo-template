@@ -28,6 +28,7 @@ import {
   VideoCameraIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -384,7 +385,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-10 sm:gap-8 ">
+                    <div className="grid grid-cols-1 gap-10 sm:gap-8">
                       <h3 className="sr-only">Recent posts</h3>
                       {engagement.slice(0, 1).map((post) => (
                         <article
@@ -392,85 +393,64 @@ export default function Header({ position, className }: SiteHeaderProps) {
                           className="relative isolate flex max-w-2xl flex-col gap-x-8 gap-y-6 sm:flex-row sm:items-start lg:flex-col lg:items-stretch"
                         >
                           <div className="relative flex-none">
-                            <div className="aspect-[2/1] w-full   sm:aspect-[16/9] sm:h-32 lg:h-auto">
-                              {hoveredItem ? (
-                                <Image
-                                  className="rounded-lg bg-gray-100 object-cover "
-                                  src={hoveredItem.imageUrl}
-                                  fill
-                                  alt={hoveredItem.title}
-                                />
-                              ) : lastHoveredItem ? (
-                                <Image
-                                  className="rounded-lg bg-gray-100 object-cover "
-                                  src={lastHoveredItem.imageUrl}
-                                  fill
-                                  alt={lastHoveredItem.title}
-                                />
-                              ) : (
-                                <Image
-                                  className="rounded-lg bg-gray-100 object-cover "
-                                  src={placeholderImage}
-                                  fill
-                                  alt="Placeholder"
-                                />
-                              )}
+                            <div className="aspect-[2/1] w-full sm:aspect-[16/9] sm:h-32 lg:h-auto">
+                              <Image
+                                className="rounded-lg bg-gray-100 object-cover "
+                                // className={cn(
+                                //   "rounded-lg bg-gray-100 object-cover",
+                                //   hoveredItem && "coobo-pulse"
+                                // )}
+                                src={
+                                  (hoveredItem || lastHoveredItem)?.imageUrl ||
+                                  placeholderImage
+                                }
+                                fill
+                                alt={
+                                  (hoveredItem || lastHoveredItem)?.title ||
+                                  "Placeholder"
+                                }
+                              />
                             </div>
+
                             <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
                           </div>
-                          {hoveredItem ? (
+                          {((hoveredItem || lastHoveredItem) && (
                             <div>
                               <div className="flex items-center gap-x-4">
                                 <time
-                                  dateTime={hoveredItem.datetime}
+                                  dateTime={
+                                    (hoveredItem || lastHoveredItem)?.datetime
+                                  }
                                   className="text-sm leading-6 text-gray-600"
                                 >
-                                  {hoveredItem.date}
+                                  {(hoveredItem || lastHoveredItem)?.date}
                                 </time>
                                 <a
-                                  href={hoveredItem.category?.href}
+                                  href={
+                                    (hoveredItem || lastHoveredItem)?.category
+                                      ?.href
+                                  }
                                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
                                 >
-                                  {hoveredItem.category?.title}
+                                  {
+                                    (hoveredItem || lastHoveredItem)?.category
+                                      ?.title
+                                  }
                                 </a>
                               </div>
                               <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
-                                <a href={hoveredItem.href}>
-                                  <span className="absolute inset-0" />
-                                  {hoveredItem.title}
-                                </a>
-                              </h4>
-                              <p className="mt-2 line-clamp-1 text-sm leading-6 text-gray-600">
-                                {hoveredItem.description}
-                              </p>
-                            </div>
-                          ) : lastHoveredItem ? (
-                            <div>
-                              <div className="flex items-center gap-x-4">
-                                <time
-                                  dateTime={lastHoveredItem.datetime}
-                                  className="text-sm leading-6 text-gray-600"
-                                >
-                                  {lastHoveredItem.date}
-                                </time>
                                 <a
-                                  href={lastHoveredItem.category?.href}
-                                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
+                                  href={(hoveredItem || lastHoveredItem)?.href}
                                 >
-                                  {lastHoveredItem.category?.title}
-                                </a>
-                              </div>
-                              <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
-                                <a href={lastHoveredItem.href}>
                                   <span className="absolute inset-0" />
-                                  {lastHoveredItem.title}
+                                  {(hoveredItem || lastHoveredItem)?.title}
                                 </a>
                               </h4>
                               <p className="mt-2 line-clamp-1 text-sm leading-6 text-gray-600">
-                                {lastHoveredItem.description}
+                                {(hoveredItem || lastHoveredItem)?.description}
                               </p>
                             </div>
-                          ) : (
+                          )) || (
                             <div>
                               <div className="flex items-center gap-x-4">
                                 <time
@@ -480,10 +460,10 @@ export default function Header({ position, className }: SiteHeaderProps) {
                                   {engagement[0].date}
                                 </time>
                                 <a
-                                  href={engagement[0].category?.href}
+                                  href={engagement[0]?.category?.href}
                                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
                                 >
-                                  {engagement[0].category?.title}
+                                  {engagement[0]?.category?.title}
                                 </a>
                               </div>
                               <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
@@ -497,32 +477,6 @@ export default function Header({ position, className }: SiteHeaderProps) {
                               </p>
                             </div>
                           )}
-                          {/* <div>
-
-                            <div className="flex items-center gap-x-4">
-                              <time
-                                dateTime={post.datetime}
-                                className="text-sm leading-6 text-gray-600"
-                              >
-                                {post.date}
-                              </time>
-                              <a
-                                href={post.category?.href}
-                                className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
-                              >
-                                {post.category?.title}
-                              </a>
-                            </div>
-                            <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
-                              <a href={post.href}>
-                                <span className="absolute inset-0" />
-                                {post.title}
-                              </a>
-                            </h4>
-                            <p className="mt-2 text-sm leading-6 text-gray-600 line-clamp-1">
-                              {post.description}
-                            </p>
-                          </div> */}
                         </article>
                       ))}
                     </div>

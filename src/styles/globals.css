@@ -7,6 +7,49 @@
     --header-height: 0;
   }
 
+  .fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  .fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* @keyframes coobo-pulse {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .coobo-pulse {
+    animation-name: coobo-pulse;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+    animation-iteration-count: infinite;
+  } */
+
   /*Browsers default outline styles override*/
 
   a,

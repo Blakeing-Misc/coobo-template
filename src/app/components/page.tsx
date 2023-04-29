@@ -3,13 +3,14 @@
 import { Fragment, useState } from "react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
+import { Dialog } from "@headlessui/react"
 import { Loader2, Mail } from "lucide-react"
 
 import Map from "@/components/map"
 import Accordion from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Dropdown from "@/components/ui/dropdown"
-import FramerAccordion from "@/components/ui/framer-accordion"
+import Modal from "@/components/ui/modal"
 import { Separator } from "@/components/ui/separator"
 import SlideOver from "@/components/ui/slide-over"
 import Table from "@/components/ui/table"
@@ -100,6 +101,7 @@ function ComponentsPage() {
   const { toast } = useToast()
 
   const [open, setOpen] = useState(false)
+  const [openModal, setModalOpen] = useState(false)
   const [expanded, setExpanded] = useState<false | number>(0)
 
   return (
@@ -160,7 +162,7 @@ function ComponentsPage() {
           faqs={faqs}
         />
       </section>
-  
+
       <section className=" mt-10">
         <div className="body">
           <h2>Table</h2>
@@ -188,7 +190,7 @@ function ComponentsPage() {
       </section>
       <section className="mt-10">
         <div className="body">
-          <h2>Toast</h2>
+          <h2>Toast Notification</h2>
         </div>
         <Button
           className="mt-10"
@@ -203,6 +205,23 @@ function ComponentsPage() {
         >
           Show Toast
         </Button>
+      </section>
+      <section className="mt-10">
+        <div className="body">
+          <h2>Modal</h2>
+        </div>
+        <Button
+          className="mt-10"
+          variant="outline"
+          onClick={() => setModalOpen(true)}
+        >
+          Show Modal
+        </Button>
+        <Modal
+          openModal={openModal}
+          setModalOpen={setModalOpen}
+          onClose={() => setModalOpen(false)}
+        />
       </section>
 
       <section className="mt-10">
