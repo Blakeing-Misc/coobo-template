@@ -9,7 +9,7 @@ import image1 from "../../../public/images/blog-image-1.jpg"
 import image2 from "../../../public/images/blog-image-2.jpg"
 import image3 from "../../../public/images/blog-image-3.jpg"
 
-const placeholderImage = "https://source.unsplash.com/random/512x512/?news"
+// const placeholderImage = "https://source.unsplash.com/random/512x512/?news"
 
 const listItems = [
   {
