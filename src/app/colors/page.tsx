@@ -1,11 +1,9 @@
 "use client"
 
 import { useToast } from "@/hooks/use-toast"
-import { Plus } from "lucide-react"
 import { theme } from "tailwind.config.js"
 import * as colors from "tailwindcss/colors"
 
-import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import {
   Tooltip,

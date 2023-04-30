@@ -33,35 +33,12 @@
     }
   }
 
-  /* @keyframes coobo-pulse {
-    0%,
-    100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  .coobo-pulse {
-    animation-name: coobo-pulse;
-    animation-duration: 2s;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
-    animation-iteration-count: infinite;
-  } */
-
   /*Browsers default outline styles override*/
 
   a,
   button:focus {
     @apply outline-1 outline-current outline-offset-1;
   }
-
-  /*1Password defualt styles override*/
-
-  /* div input {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-  } */
 
   .body p {
     @apply leading-7 text-base [&:not(:first-child)]:mt-4;

@@ -28,7 +28,6 @@ import {
   VideoCameraIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline"
-import { AnimatePresence, motion } from "framer-motion"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -36,9 +35,9 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { buttonVariants } from "./ui/button"
 
-interface MainNavProps {
-  items?: NavItem[]
-}
+// interface MainNavProps {
+//   items?: NavItem[]
+// }
 
 const engagement = [
   {
@@ -118,32 +117,6 @@ const resources = [
   { name: "Partners", href: "#", icon: GlobeAltIcon },
   { name: "Guides", href: "#", icon: BookOpenIcon },
   { name: "Webinars", href: "#", icon: VideoCameraIcon },
-]
-const recentPosts = [
-  {
-    id: 1,
-    title: "Boost your conversion rate",
-    href: "#",
-    date: "Mar 16, 2023",
-    datetime: "2023-03-16",
-    category: { title: "Marketing", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-    description:
-      "Et et dolore officia quis nostrud esse aute cillum irure do esse. Eiusmod ad deserunt cupidatat est magna Lorem.",
-  },
-  {
-    id: 2,
-    title: "How to use search engine optimization to drive sales",
-    href: "#",
-    date: "Mar 10, 2023",
-    datetime: "2023-03-10",
-    category: { title: "Sales", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
-    description:
-      "Optio cum necessitatibus dolor voluptatum provident commodi et.",
-  },
 ]
 
 const products = [
@@ -396,10 +369,6 @@ export default function Header({ position, className }: SiteHeaderProps) {
                             <div className="aspect-[2/1] w-full sm:aspect-[16/9] sm:h-32 lg:h-auto">
                               <Image
                                 className="rounded-lg bg-gray-100 object-cover "
-                                // className={cn(
-                                //   "rounded-lg bg-gray-100 object-cover",
-                                //   hoveredItem && "coobo-pulse"
-                                // )}
                                 src={
                                   (hoveredItem || lastHoveredItem)?.imageUrl ||
                                   placeholderImage

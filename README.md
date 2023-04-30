@@ -9,3 +9,7 @@
 - [ ] Extract out compoents from components page
 - [ ] Invstigate slider performance might have to switch to swiperjs
 - [ ] Clean up/add more button variations
+- [ ] Get rid of radix components
+- [ ] Investigate React Aria/Stately in comparision to headlessUI
+- [ ] start integrating sanity
+- [ ] Fee like dynamic hover image could be optimized
