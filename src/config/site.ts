@@ -22,21 +22,35 @@ export const siteConfig: SiteConfig = {
   description:
     "Beautifully designed components built with Radix UI and Tailwind CSS.",
   mainNav: [
+    // {
+    //   title: "Typography",
+    //   slug: "/typography",
+    // },
+    // {
+    //   title: "Components",
+    //   slug: "/components",
+    // },
+    // {
+    //   title: "Colors",
+    //   slug: "/colors",
+    // },
+    // {
+    //   title: "Forms",
+    //   slug: "/forms",
+    // },
+
     {
-      title: "Typography",
-      slug: "/typography",
+      title: "About",
+      slug: "/about",
     },
     {
-      title: "Components",
-      slug: "/components",
+      title: "Our Team",
+      slug: "/our-team",
     },
+
     {
-      title: "Colors",
-      slug: "/colors",
-    },
-    {
-      title: "Forms",
-      slug: "/forms",
+      title: "Contact",
+      slug: "/contact",
     },
     {
       title: "Blog",

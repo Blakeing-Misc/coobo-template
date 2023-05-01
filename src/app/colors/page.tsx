@@ -66,7 +66,8 @@ function ColorsPage() {
           >
             link
           </a>{" "}
-          for further customization.
+          for further customization. Hover and click on a color to copy the
+          hex value.
         </p>
       </section>
       <Separator className="my-4 " />

@@ -9,8 +9,6 @@ import image1 from "../../../public/images/blog-image-1.jpg"
 import image2 from "../../../public/images/blog-image-2.jpg"
 import image3 from "../../../public/images/blog-image-3.jpg"
 
-// const placeholderImage = "https://source.unsplash.com/random/512x512/?news"
-
 const listItems = [
   {
     id: 1,
@@ -108,7 +106,6 @@ function TestPage() {
           ) : (
             <Image
               className="rounded-lg bg-gray-100 object-cover"
-              // src={placeholderImage}
               src="https://source.unsplash.com/random/512x512/?news"
               fill
               alt="Placeholder"

@@ -12,4 +12,7 @@
 - [ ] Get rid of radix components
 - [ ] Investigate React Aria/Stately in comparision to headlessUI
 - [ ] start integrating sanity
-- [ ] Fee like dynamic hover image could be optimized
+- [ ] Feel like dynamic hover image could be optimized
+- [ ] add contact page
+- [ ] add team page
+- [ ] add about page

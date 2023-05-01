@@ -5,151 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react"
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-  RectangleGroupIcon,
-} from "@heroicons/react/20/solid"
-import {
-  Bars3Icon,
-  BookOpenIcon,
-  BriefcaseIcon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  GlobeAltIcon,
-  InformationCircleIcon,
-  NewspaperIcon,
-  ShieldCheckIcon,
-  SquaresPlusIcon,
-  UserGroupIcon,
-  UsersIcon,
-  VideoCameraIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import { NavItem } from "@/types/nav"
+import { callsToAction, engagement, products, resources } from "@/config/data"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { buttonVariants } from "./ui/button"
-
-// interface MainNavProps {
-//   items?: NavItem[]
-// }
-
-const engagement = [
-  {
-    id: "1",
-    name: "About",
-    href: "#",
-    icon: InformationCircleIcon,
-    title: "Boost your conversion rate",
-    date: "Mar 16, 2023",
-    datetime: "2023-03-16",
-    category: { title: "Marketing", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-    description:
-      "Et et dolore officia quis nostrud esse aute cillum irure do esse. Eiusmod ad deserunt cupidatat est magna Lorem.",
-  },
-  {
-    id: "2",
-    title: "How to use search engine optimization to drive sales",
-    name: "Customers",
-    href: "#",
-    icon: UsersIcon,
-    date: "Mar 10, 2023",
-    datetime: "2023-03-10",
-    category: { title: "Customers", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
-    description:
-      "Optio cum necessitatibus dolor voluptatum provident commodi et.",
-  },
-  {
-    id: "3",
-    title:
-      "Eget velit aliquet sagittis id consectetur. Vitae semper quis lectus nulla at volutpat diam ut.",
-    name: "Press",
-    href: "#",
-    icon: NewspaperIcon,
-    date: "Aug 27, 2023",
-    datetime: "2023-08-27",
-    category: { title: "Press", href: "#" },
-    imageUrl: "https://source.unsplash.com/random/?press",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "4",
-    title: "In massa tempor nec feugiat nisl pretium fusce id velit.",
-    name: "Careers",
-    href: "#",
-    icon: BriefcaseIcon,
-    date: "April 9, 2023",
-    datetime: "2023-04-9",
-    category: { title: "Careers", href: "#" },
-    imageUrl: "https://source.unsplash.com/random/?careers",
-    description:
-      "Vulputate enim nulla aliquet porttitor lacus luctus accumsan. Euismod elementum nisi quis eleifend quam adipiscing.",
-  },
-  {
-    id: "5",
-    title: "Ac odio tempor orci dapibus ultrices in iaculis.",
-    name: "Privacy",
-    href: "#",
-    icon: ShieldCheckIcon,
-    date: "April 27, 2023",
-    datetime: "2023-04-27",
-    category: { title: "Privacy", href: "#" },
-    imageUrl: "https://source.unsplash.com/random/?privacy",
-    description:
-      "Nisl rhoncus mattis rhoncus urna neque. Sed enim ut sem viverra.",
-  },
-  // { id: "3", name: "Press", href: "#", icon: NewspaperIcon },
-  // { id: "4", name: "Careers", href: "#", icon: BriefcaseIcon },
-  // { id: "5", name: "Privacy", href: "#", icon: ShieldCheckIcon },
-]
-const resources = [
-  { name: "Community", href: "#", icon: UserGroupIcon },
-  { name: "Partners", href: "#", icon: GlobeAltIcon },
-  { name: "Guides", href: "#", icon: BookOpenIcon },
-  { name: "Webinars", href: "#", icon: VideoCameraIcon },
-]
-
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding where your traffic is coming from",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers with our engagement tool",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-]
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-  { name: "View all products", href: "#", icon: RectangleGroupIcon },
-]
 
 interface SiteHeaderProps {
   position?: "fixed" | "sticky" | "relative"
@@ -225,7 +89,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
             )}
             <Popover>
               <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-accent-600 hover:text-accent-900">
-                Mega 1
+                Theme
                 <ChevronDownIcon
                   className="h-5 w-5 flex-none text-accent-400"
                   aria-hidden="true"

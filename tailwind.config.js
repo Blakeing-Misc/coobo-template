@@ -32,7 +32,7 @@ module.exports = {
         primary: colors.indigo,
 
         secondary: colors.orange,
-        accent: colors.slate,
+        accent: colors.gray,
       },
       fontFamily: {
         display: ["var(--font-roboto)", ...fontFamily.sans],
