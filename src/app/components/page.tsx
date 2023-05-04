@@ -4,6 +4,7 @@ import { Fragment, useState } from "react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { Dialog } from "@headlessui/react"
+import { CheckCircleIcon } from "@heroicons/react/20/solid"
 import { Loader2, Mail } from "lucide-react"
 
 import Map from "@/components/map"
@@ -117,37 +118,94 @@ function ComponentsPage() {
 
       <Separator className="my-4 " />
 
-      <section className="">
+      <section className="space-y-4">
         <div className="body">
           <h2>Buttons</h2>
         </div>
-        <div className="mt-10 flex flex-col gap-4 lg:flex-row">
-          <Button className="max-w-fit">Button</Button>
-          <Button className="max-w-fit" variant="secondary">
-            Secondary
+        <h3 className="text-lg font-semibold ">Primary</h3>
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button size="xs">Button Text</Button>
+          <Button size="sm">Button Text</Button>
+          <Button size="md">Button Text</Button>
+          <Button size="lg">Button Text</Button>
+          <Button>Button Text</Button>
+        </div>
+        <h3 className="text-lg font-semibold">Primary on dark</h3>
+        <div className=" flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button variant="onDark" size="xs">
+            Button Text
           </Button>
-          <Button className="max-w-fit">
-            <Mail className="mr-2 h-4 w-4" /> Button with Icon
+          <Button variant="onDark" size="sm">
+            Button Text
           </Button>
-
-          <Button className="max-w-fit" variant="link">
-            Link
+          <Button variant="onDark" size="md">
+            Button Text
           </Button>
-          <Button className="max-w-fit" disabled>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Please wait
+          <Button variant="onDark" size="lg">
+            Button Text
           </Button>
-          <Button className="max-w-fit" variant="ghost">
-            Ghost
+          <Button variant="onDark">Button Text</Button>
+        </div>
+        <h3 className="text-lg font-semibold">Secondary</h3>
+        <div className=" flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button variant="secondary" size="xs">
+            Button Text
           </Button>
-          <Button className="max-w-fit" variant="subtle">
-            Subtle
+          <Button variant="secondary" size="sm">
+            Button Text
           </Button>
-          <Button className="max-w-fit" variant="outline">
-            Outline
+          <Button variant="secondary" size="md">
+            Button Text
           </Button>
-          <Button className="max-w-fit" variant="destructive">
-            Destructive
+          <Button variant="secondary" size="lg">
+            Button Text
+          </Button>
+          <Button variant="secondary">Button Text</Button>
+        </div>
+        <h3 className="text-lg font-semibold">Soft</h3>
+        <div className=" flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button variant="soft" size="xs">
+            Button Text
+          </Button>
+          <Button variant="soft" size="sm">
+            Button Text
+          </Button>
+          <Button variant="soft" size="md">
+            Button Text
+          </Button>
+          <Button variant="soft" size="lg">
+            Button Text
+          </Button>
+          <Button variant="soft">Button Text</Button>
+        </div>
+        <h3 className="text-lg font-semibold">Leading Icon</h3>
+        <div className=" flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button variant="withIcon" size="iconSm">
+            <CheckCircleIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+            Button Text
+          </Button>
+          <Button variant="withIcon" size="iconMd">
+            <CheckCircleIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+            Button Text
+          </Button>
+          <Button variant="withIcon" size="iconLg">
+            <CheckCircleIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+            Button Text
+          </Button>
+        </div>
+        <h3 className="text-lg font-semibold">Trailing Icon</h3>
+        <div className=" flex flex-col items-start gap-4 md:flex-row md:items-start ">
+          <Button variant="withIcon" size="iconSm">
+            Button Text
+            <CheckCircleIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+          </Button>
+          <Button variant="withIcon" size="iconMd">
+            Button Text
+            <CheckCircleIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+          </Button>
+          <Button variant="withIcon" size="iconLg">
+            Button Text
+            <CheckCircleIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
           </Button>
         </div>
       </section>
@@ -194,7 +252,7 @@ function ComponentsPage() {
         </div>
         <Button
           className="mt-10"
-          variant="outline"
+          variant="secondary"
           onClick={() => {
             toast({
               title: "Your toast title",
@@ -212,7 +270,7 @@ function ComponentsPage() {
         </div>
         <Button
           className="mt-10"
-          variant="outline"
+          variant="secondary"
           onClick={() => setModalOpen(true)}
         >
           Show Modal
@@ -230,7 +288,7 @@ function ComponentsPage() {
         </div>
         <Button
           className="mt-10"
-          variant="outline"
+          variant="secondary"
           onClick={() => setOpen(true)}
         >
           Show Slide Over

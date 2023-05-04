@@ -4,6 +4,7 @@ import {
   RectangleGroupIcon,
 } from "@heroicons/react/20/solid"
 import {
+  BeakerIcon,
   BookOpenIcon,
   BriefcaseIcon,
   ChartPieIcon,
@@ -11,9 +12,13 @@ import {
   FingerPrintIcon,
   GlobeAltIcon,
   InformationCircleIcon,
+  LanguageIcon,
   NewspaperIcon,
+  PuzzlePieceIcon,
   ShieldCheckIcon,
   SquaresPlusIcon,
+  SwatchIcon,
+  TableCellsIcon,
   UserGroupIcon,
   UsersIcon,
   VideoCameraIcon,
@@ -103,27 +108,27 @@ export const resources = [
 export const products = [
   {
     name: "Typography",
-    description: "Get a better understanding where your traffic is coming from",
+    description: "Custom styles for headings, paragraphs, lists, fonts, etc.",
     href: "/typography",
-    icon: ChartPieIcon,
+    icon: LanguageIcon,
   },
   {
     name: "Components",
-    description: "Speak directly to your customers with our engagement tool",
+    description: "Accessible and customizable components.",
     href: "/components",
-    icon: CursorArrowRaysIcon,
+    icon: PuzzlePieceIcon,
   },
   {
     name: "Colors",
-    description: "Your customers’ data will be safe and secure",
+    description: "Custom default color palette for your project.",
     href: "/colors",
-    icon: FingerPrintIcon,
+    icon: SwatchIcon,
   },
   {
     name: "Forms",
-    description: "Your customers’ data will be safe and secure",
+    description: "Full featured secure forms.",
     href: "/forms",
-    icon: SquaresPlusIcon,
+    icon: TableCellsIcon,
   },
 ]
 

@@ -13,6 +13,6 @@
 - [ ] Investigate React Aria/Stately in comparision to headlessUI
 - [ ] start integrating sanity
 - [ ] Feel like dynamic hover image could be optimized
-- [ ] add contact page
-- [ ] add team page
-- [ ] add about page
+- [x] add contact page
+- [x] add team page
+- [x] add about page

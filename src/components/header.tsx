@@ -131,7 +131,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-accent-50">
+                  {/* <div className="bg-accent-50">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                       <div className="grid grid-cols-3 divide-x divide-accent-900/5 border-x border-accent-900/5">
                         {callsToAction.map((item) => (
@@ -149,7 +149,7 @@ export default function Header({ position, className }: SiteHeaderProps) {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </Popover.Panel>
               </Transition>
             </Popover>
