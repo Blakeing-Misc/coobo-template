@@ -32,6 +32,49 @@
       opacity: 0;
     }
   }
+  [class^="number-slide"],
+  [class*=" number-slide"] {
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+
+    max-height: 100vh;
+  }
+
+  .number-slide1 {
+    /* background: rgb(64, 175, 255);
+    background: linear-gradient(
+      128deg,
+      rgba(64, 175, 255, 1) 0%,
+      rgba(63, 97, 255, 1) 100%
+    ); */
+    @apply bg-gradient-to-r  from-primary-50 to-accent-50;
+  }
+
+  .number-slide2 {
+    @apply bg-gradient-to-r from-secondary-50 to-accent-50;
+  }
+
+  .number-slide3 {
+    @apply bg-gradient-to-r from-primary-50 to-accent-50;
+  }
+
+  .number-slide4 {
+    @apply bg-gradient-to-r from-secondary-50 to-accent-50;
+  }
+
+  .number-slide5 {
+    @apply bg-gradient-to-r from-primary-50 to-accent-50;
+  }
+
+  .number-slide6 {
+    @apply bg-gradient-to-r from-secondary-50 to-accent-50;
+  }
 
   /*Browsers default outline styles override*/
 
