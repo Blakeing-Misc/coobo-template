@@ -85,7 +85,7 @@ export default function HomeSlider() {
                       </a>
                     </div>
                     <h1 className="mt-10 text-4xl font-bold tracking-tight text-accent-900 sm:text-6xl">
-                      Coobo Template
+                      Coobo Staging Template
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-accent-600">
                       Anim aute id magna aliqua ad ad non deserunt sunt. Qui
