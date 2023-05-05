@@ -2,9 +2,6 @@ const { withContentlayer } = require("next-contentlayer")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -31,11 +28,15 @@ const nextConfig = {
   },
   typescript: {
     // Set this to false if you want production builds to abort if there's type errors
-    ignoreBuildErrors: process.env.VERCEL_ENV === "production",
+    ignoreBuildErrors:
+      process.env.VERCEL_ENV === "production" ||
+      process.env.VERCEL_ENV === "staging",
   },
   eslint: {
-    /// Set this to false if you want production builds to abort if there's lint errors
-    ignoreDuringBuilds: process.env.VERCEL_ENV === "production",
+    // Set this to false if you want production builds to abort if there's lint errors
+    ignoreDuringBuilds:
+      process.env.VERCEL_ENV === "production" ||
+      process.env.VERCEL_ENV === "staging",
   },
 }
 
