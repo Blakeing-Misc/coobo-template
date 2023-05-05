@@ -73,7 +73,7 @@ export default function HomeSlider() {
                     <div className="">
                       <a href="#" className="inline-flex space-x-6">
                         <span className="rounded-full bg-accent-600/10 px-3 py-1 text-sm font-semibold leading-6 text-accent-600 ring-1 ring-inset ring-accent-600/10">
-                          What's new
+                          What&apos;s new
                         </span>
                         <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-accent-600">
                           <span>Just shipped v0.1.0</span>
@@ -134,94 +134,7 @@ export default function HomeSlider() {
                               </div>
                             </div>
                           </div>
-                          <div className="px-6 pb-14 pt-6">
-                            <pre className="text-[0.8125rem] leading-6 text-accent-300">
-                              <code>
-                                import {"{"}{" "}
-                                <span className="text-primary-200">
-                                  useState
-                                </span>{" "}
-                                {"}"} from{" "}
-                                <span className="text-primary-300">
-                                  'react'
-                                </span>
-                                {"\n"}import {"{"}{" "}
-                                <span className="text-primary-200">Switch</span>{" "}
-                                {"}"} from{" "}
-                                <span className="text-primary-300">
-                                  '@headlessui/react'
-                                </span>
-                                {"\n"}
-                                {"\n"}
-                                <span className="text-primary-400">
-                                  function Example
-                                </span>
-                                () {"{"}
-                                {"\n"}
-                                {"    "}const [
-                                <span className="text-primary-200">
-                                  enabled
-                                </span>
-                                ,{" "}
-                                <span className="text-primary-200">
-                                  setEnabled
-                                </span>
-                                ] = useState(
-                                <span className="text-primary-200">true</span>)
-                                {"\n"}
-                                {"\n"}
-                                {"    "}return ({"\n"}
-                                {"      "}&lt;
-                                <span className="text-primary-400">
-                                  form
-                                </span>{" "}
-                                action="/
-                                <span className="text-primary-300">
-                                  notification-settings
-                                </span>
-                                " method="
-                                <span className="text-primary-300">post</span>
-                                "&gt;{"\n"}
-                                {"        "}&lt;
-                                <span className="text-primary-400">
-                                  Switch
-                                </span>{" "}
-                                checked={"{"}
-                                <span className="text-primary-200">
-                                  enabled
-                                </span>
-                                {"}"} onChange={"{"}
-                                <span className="text-primary-200">
-                                  setEnabled
-                                </span>
-                                {"}"} name="
-                                <span className="text-primary-300">
-                                  notifications
-                                </span>
-                                "&gt;{"\n"}
-                                {"          "}
-                                {"{"}
-                                <span className="text-accent-500">
-                                  /* ... */
-                                </span>
-                                {"}"}
-                                {"\n"}
-                                {"        "}&lt;/
-                                <span className="text-primary-400">Switch</span>
-                                &gt;{"\n"}
-                                {"        "}&lt;
-                                <span className="text-primary-400">button</span>
-                                &gt;Submit&lt;/
-                                <span className="text-primary-400">button</span>
-                                &gt;{"\n"}
-                                {"      "}&lt;/
-                                <span className="text-primary-400">form</span>
-                                &gt;{"\n"}
-                                {"    "}){"\n"}
-                                {"}"}
-                              </code>
-                            </pre>
-                          </div>
+                          <div className="px-6 pb-14 pt-6"></div>
                         </div>
                       </div>
                       <div
@@ -248,7 +161,7 @@ export default function HomeSlider() {
                     <div className="">
                       <a href="#" className="inline-flex space-x-6">
                         <span className="rounded-full bg-accent-600/10 px-3 py-1 text-sm font-semibold leading-6 text-accent-600 ring-1 ring-inset ring-accent-600/10">
-                          What's new
+                          What&apos;s new
                         </span>
                         <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-accent-600">
                           <span>Just shipped v0.1.0</span>
@@ -309,94 +222,7 @@ export default function HomeSlider() {
                               </div>
                             </div>
                           </div>
-                          <div className="px-6 pb-14 pt-6">
-                            <pre className="text-[0.8125rem] leading-6 text-accent-300">
-                              <code>
-                                import {"{"}{" "}
-                                <span className="text-primary-200">
-                                  useState
-                                </span>{" "}
-                                {"}"} from{" "}
-                                <span className="text-primary-300">
-                                  'react'
-                                </span>
-                                {"\n"}import {"{"}{" "}
-                                <span className="text-primary-200">Switch</span>{" "}
-                                {"}"} from{" "}
-                                <span className="text-primary-300">
-                                  '@headlessui/react'
-                                </span>
-                                {"\n"}
-                                {"\n"}
-                                <span className="text-primary-400">
-                                  function Example
-                                </span>
-                                () {"{"}
-                                {"\n"}
-                                {"    "}const [
-                                <span className="text-primary-200">
-                                  enabled
-                                </span>
-                                ,{" "}
-                                <span className="text-primary-200">
-                                  setEnabled
-                                </span>
-                                ] = useState(
-                                <span className="text-primary-200">true</span>)
-                                {"\n"}
-                                {"\n"}
-                                {"    "}return ({"\n"}
-                                {"      "}&lt;
-                                <span className="text-primary-400">
-                                  form
-                                </span>{" "}
-                                action="/
-                                <span className="text-primary-300">
-                                  notification-settings
-                                </span>
-                                " method="
-                                <span className="text-primary-300">post</span>
-                                "&gt;{"\n"}
-                                {"        "}&lt;
-                                <span className="text-primary-400">
-                                  Switch
-                                </span>{" "}
-                                checked={"{"}
-                                <span className="text-primary-200">
-                                  enabled
-                                </span>
-                                {"}"} onChange={"{"}
-                                <span className="text-primary-200">
-                                  setEnabled
-                                </span>
-                                {"}"} name="
-                                <span className="text-primary-300">
-                                  notifications
-                                </span>
-                                "&gt;{"\n"}
-                                {"          "}
-                                {"{"}
-                                <span className="text-accent-500">
-                                  /* ... */
-                                </span>
-                                {"}"}
-                                {"\n"}
-                                {"        "}&lt;/
-                                <span className="text-primary-400">Switch</span>
-                                &gt;{"\n"}
-                                {"        "}&lt;
-                                <span className="text-primary-400">button</span>
-                                &gt;Submit&lt;/
-                                <span className="text-primary-400">button</span>
-                                &gt;{"\n"}
-                                {"      "}&lt;/
-                                <span className="text-primary-400">form</span>
-                                &gt;{"\n"}
-                                {"    "}){"\n"}
-                                {"}"}
-                              </code>
-                            </pre>
-                          </div>
+                          <div className="px-6 pb-14 pt-6"></div>
                         </div>
                       </div>
                       <div
