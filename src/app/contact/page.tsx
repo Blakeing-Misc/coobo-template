@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className=" ">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <h2 className="text-3xl font-bold tracking-tight text-accent-900">
-              Let's work together
+              Let&apos;s work together
             </h2>
             <p className="mt-2 text-lg leading-8 text-accent-600">
               Proin volutpat consequat porttitor cras nullam gravida at orci
