@@ -18,14 +18,14 @@ const nextConfig = {
       },
     ],
   },
-  headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ]
-  },
+  // headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)",
+  //       headers: securityHeaders,
+  //     },
+  //   ]
+  // },
   typescript: {
     // Set this to false if you want production builds to abort if there's type errors
     ignoreBuildErrors: true,
