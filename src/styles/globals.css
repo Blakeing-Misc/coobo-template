@@ -37,8 +37,12 @@
     @apply min-h-[calc(100vh_-_var(--header-height))];
   } */
 
-  .swiper .swiper-slide {
+  /* .swiper .swiper-slide {
     @apply min-h-[calc(100vh_-_var(--header-height))] flex items-center justify-center;
+  } */
+
+  .swiper .swiper-slide {
+    @apply min-h-screen flex items-center justify-center;
   }
 
   . [class^="number-slide"],

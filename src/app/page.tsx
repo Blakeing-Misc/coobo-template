@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <main>
       {/* <SiteHeader position="fixed" /> */}
-      <Header position="sticky" />
+      <Header position="fixed" />
       {/* <HomeSlider /> */}
       <SwiperSlider />
     </main>
