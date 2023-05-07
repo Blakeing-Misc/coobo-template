@@ -1,9 +1,9 @@
 "use client"
 
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper"
+import { A11y, Autoplay, Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import "swiper/swiper.min.css"
+import "swiper/swiper.css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import Image from "next/image"
@@ -15,16 +15,21 @@ const modules: SwiperModule[] = Object.values({
   Navigation,
   Pagination,
   A11y,
+  Autoplay,
 })
 
 function SwiperComponent() {
   return (
     <Swiper
       modules={modules}
-      spaceBetween={50}
+      loop={true}
+      autoplay={{
+        delay: 2500,
+        pauseOnMouseEnter: true,
+      }}
       slidesPerView={1}
-      navigation
-      className=""
+      spaceBetween={30}
+      navigation={true}
       pagination={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
