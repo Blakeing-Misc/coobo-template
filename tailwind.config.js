@@ -29,14 +29,16 @@ module.exports = {
         //   900: "#340F04",
         //   950: "#170702",
         // },
-        primary: colors.indigo,
+        primary: colors.blue,
 
         secondary: colors.orange,
-        accent: colors.gray,
+        accent: colors.slate,
       },
       fontFamily: {
-        display: ["var(--font-roboto)", ...fontFamily.sans],
-        sans: ["var(--font-archivo)", ...fontFamily.sans],
+        // display: ["var(--font-roboto)", ...fontFamily.sans],
+        // sans: ["var(--font-archivo)", ...fontFamily.sans],
+        sans: ["var(--font-eb-garamond)", ...fontFamily.sans],
+        display: ["var(--font-nunito-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
